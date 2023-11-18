@@ -1,6 +1,6 @@
 <?php
 
-// function insert_loaiga($name,$image)
+// function insert_danhmuc($name,$image)
 // {
 //     $sql = "INSERT INTO danhmuc(name,image) VALUES ('$name','$image')";
 //     pdo_execute($sql);
@@ -15,9 +15,9 @@
 //     $sql = "DELETE FROM danhmuc WHERE id='$id'";
 //     pdo_execute($sql);
 // }
-function loadAll_loaiga()
+function loadAll_loaimi()
 {
-    $sql = "SELECT * FROM loaiga";
+    $sql = "SELECT * FROM loaimi";
     return pdo_query($sql);
 }
 // function loadOne_danhmuc($id)
