@@ -160,7 +160,7 @@
                                         <td><?= $email ?></td>
                                         <td><?= $address ?></td>
                                         <td><?= $tel ?></td>
-                                        <td><?= $id_role == 0 ? "admin" : "user" ?></td>
+                                        <td><?= $id_role == 2 ? "admin" : "user" ?></td>
                                         <td>
                                             <a href="<?php echo $suatk ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
                                             </a>
