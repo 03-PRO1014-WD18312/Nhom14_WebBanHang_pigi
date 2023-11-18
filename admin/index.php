@@ -1,6 +1,8 @@
 <?php
 include "../model/pdo.php";
 include "../model/danhmuc.php";
+include "../model/dichvu.php";
+
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     include "layout/header.php";
     include "layout/sidebar.php";
@@ -30,7 +32,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 <script>
                     window.location.href = 'index.php?act=list_dm';
                 </script>
-            <?php
+<?php
             }
 
             break;
@@ -73,34 +75,94 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_dm = loadAll_danhmuc();
             include "home.php";
             break;
+            // dịch vụ
+        case "add_dv":
+            include "dichvu/add_dv.php";
+            if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $imgname = $_FILES['image']['name'];
+                // vv
+                if (isset($imgname)) {
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                        // echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+                    } else {
+                        // echo "Sorry, there was an error uploading your file.";
+                    }
+                }
+                insert_dichvu($title, $content, $imgname);
+            }
+            break;
+        case "xoadv":
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                delete_dichvu($id);
+            }
+            $list_dv = loadAll_dichvu();
+            include "dichvu/list_dv.php";
+            break;
+        case "suadv":
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $dichvu_update = loadOne_dichvu($id);
+            }
+            include "dichvu/update_dv.php";
+            break;
+        case "update_dv":
+            if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                $id = $_POST['id'];
+                $dichvu_update = loadOne_dichvu($id);
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $imgname = $_FILES['image']['name'];
+                if (!empty($imgname)) {
+                    $target_dir = "../upload/";
+                    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                        // echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+                    } else {
+                        // echo "Sorry, there was an error uploading your file.";
+                    }
+                } else {
+                    $imgname = $dichvu_update['image'];
+                }
+                update_dichvu($id, $title, $content, $imgname);
+                $thongbao = "Cập nhật thành công";
+            }
+        case "list_dv":
+            $list_dv = loadAll_dichvu();
+            include "dichvu/list_dv.php";
+            break;
 
+        default:
+            $list_dm = loadAll_danhmuc();
+            include "home.php";
+            break;
+    }
+    include "layout/footer.php";
+} else {
+    include "layout/auth/header.php";
+
+    if (isset($_GET['auth']) && ($_GET['auth'] != "")) {
+        $auth = $_GET['auth'];
+        switch ($auth) {
+            case "forgot_pass":
+                include "auth/forgot.php";
+                break;
+            case "sign_up":
+                include "auth/forgot.php";
+                break;
+            case "update_pass":
+                include "auth/updatepassword.php";
+                break;
             default:
-                $list_dm = loadAll_danhmuc();
-                include "home.php";
+                include "auth/login.php";
                 break;
         }
-        include "layout/footer.php";
     } else {
-        include "layout/auth/header.php";
-
-        if (isset($_GET['auth']) && ($_GET['auth'] != "")) {
-            $auth = $_GET['auth'];
-            switch ($auth) {
-                case "forgot_pass":
-                    include "auth/forgot.php";
-                    break;
-                case "sign_up":
-                    include "auth/forgot.php";
-                    break;
-                case "update_pass":
-                    include "auth/updatepassword.php";
-                    break;
-                default:
-                    include "auth/login.php";
-                    break;
-            }
-        } else {
-            include "auth/login.php";
-        }
-        include "layout/auth/footer.php";
+        include "auth/login.php";
     }
+    include "layout/auth/footer.php";
+}

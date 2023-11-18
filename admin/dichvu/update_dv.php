@@ -1,6 +1,6 @@
 <?php
-if ($loaiga_update) {
-    extract($loaiga_update);
+if ($dichvu_update) {
+    extract($dichvu_update);
 ?>
     <div class="page-wrapper">
         <!-- ============================================================== -->
@@ -12,15 +12,15 @@ if ($loaiga_update) {
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h4 class="text-themecolor">Sửa loại gà</h4>
+                    <h4 class="text-themecolor">Sửa dịch vụ </h4>
                 </div>
                 <div class="col-md-7 align-self-center text-end">
                     <div class="d-flex justify-content-end align-items-center">
                         <ol class="breadcrumb justify-content-end">
                             <li class="breadcrumb-item">
-                                <a href="javascript:void(0)">loại gà</a>
+                                <a href="javascript:void(0)">Dịch vụ </a>
                             </li>
-                            <li class="breadcrumb-item active">Sửa loại gà</li>
+                            <li class="breadcrumb-item active">Sửa dịch vụ </li>
                         </ol>
                         <a href="index.php?act=list_dm">
                             <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
@@ -126,20 +126,20 @@ if ($loaiga_update) {
             <!-- End Right sidebar -->
             <!-- ============================================================== -->
             <!-- Star content -->
-            <form action="index.php?act=update_lg" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
-                <div class="form-group">
-                    <input type="hidden" name="id" value="<?= $id ?>">
-                    <label for="txtTitle " class="form-label" id="lblTitle">Tên loại gà</label>
-                    <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
-                    <label for="txtTitle " class="form-label" id="lblTitle">Nội dung</label>
-                    <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
-                    <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
-                    <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
-                </div>
-                <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
-                <input type="reset" class="btn btn-primary text-white" value="Reset">
-                <a href="index.php?act=list_dm"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
-            </form>
+            <form action="index.php?act=update_dv" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
+            <div class="form-group">
+                <input type="hidden" name="id" value="<?= $id ?>">
+                <label for="txtTitle " class="form-label" id="lblTitle">Tên dịch vụ </label>
+                <input type="text" class="form-control" name="title" id="txtTitle" placeholder="Nhập tên danh mục" style="margin-bottom: 10px;" value="<?= $title ?>">
+                <label for="txtTitle " class="form-label" id="lblTitle">Nội dung </label>
+                <input type="text" class="form-control" name="content" id="txtTitle" placeholder="Nội dung" style="margin-bottom: 10px;" value="<?= $content     ?>">
+                <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
+                <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
+            </div>
+            <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
+            <input type="reset" class="btn btn-primary text-white" value="Reset">
+            <a href="index.php?act=list_dv"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
+        </form>
             <!-- End content -->
         </div>
         <!-- ============================================================== -->
