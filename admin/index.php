@@ -95,6 +95,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     }
                 }
                 insert_dichvu($title, $content, $imgname);
+            ?>
+                <script>
+                    window.location.href = 'index.php?act=list_dv';
+                </script>
+            <?php
             }
             break;
         case "xoadv":
@@ -132,7 +137,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 update_dichvu($id, $title, $content, $imgname);
                 $thongbao = "Cập nhật thành công";
+            ?>
+                <script>
+                    window.location.href = 'index.php?act=list_dv';
+                </script>
+            <?php
             }
+            break;
         case "list_dv":
             $list_dv = loadAll_dichvu();
             include "dichvu/list_dv.php";

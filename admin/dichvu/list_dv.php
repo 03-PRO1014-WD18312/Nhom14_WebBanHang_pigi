@@ -18,7 +18,7 @@
                         </li>
                         <li class="breadcrumb-item active">Danh sách</li>
                     </ol>
-                    <a href="index.php?act=add_dm">
+                    <a href="index.php?act=add_dv">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
                             <i class="fa fa-plus-circle"></i> Thêm mới danh mục
                         </button>
@@ -151,11 +151,10 @@
                                         <td><?= $id ?></td>
                                         <td><?= $title ?></td>
                                         <td><?= $content ?></td>
-                                        <td><?= $image ?></td>
                                         <td><img width="100px" src="../upload/<?= $image ?>" alt=""></td>
                                         <td>
                                             <a href="<?php echo $suadv ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
-                                            </a> 
+                                            </a>
                                             <a href="<?php echo $xoadv ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
                                         </td>
                                     </tr>

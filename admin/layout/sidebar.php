@@ -43,7 +43,7 @@
           </ul>
         </li>
         <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-clipboard-list"></i><span class="hide-menu">Sản phẩm
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-utensils"></i><span class="hide-menu">Sản phẩm
               <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
             </span></a>
           <ul aria-expanded="false" class="collapse">
@@ -52,7 +52,16 @@
           </ul>
         </li>
         <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa-solid fa-truck-fast"></i><span class="hide-menu">dịch vụ
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-user"></i><span class="hide-menu">Tài khoản
+              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
+            </span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="index.php?act=list_tk">List tài khoản</a></li>
+            <li><a href="index.php?act=add_tk">Add tài khoản</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-truck"></i><span class="hide-menu">Dịch vụ
               <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
             </span></a>
           <ul aria-expanded="false" class="collapse">
