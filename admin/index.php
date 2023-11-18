@@ -34,7 +34,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 <script>
                     window.location.href = 'index.php?act=list_dm';
                 </script>
-<?php
+            <?php
             }
 
             break;
@@ -137,10 +137,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_dv = loadAll_dichvu();
             include "dichvu/list_dv.php";
             break;
-          // tai khoan:
+            // tai khoan:
         case "add_tk":
             $list_role = loadAll_role();
-            include "taikhoan/add_tk.php";
             if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
                 $user = $_POST['user'];
                 $pass = md5($_POST['pass']);
@@ -161,7 +160,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 insert_taikhoan($user, $pass, $hoten, $imgname, $email, $address, $tel, $id_role);
                 $thongbao = "Thêm thành công";
+            ?>
+                <script>
+                    window.location.href = 'index.php?act=list_tk';
+                </script>
+<?php
             }
+            include "taikhoan/add_tk.php";
 
             break;
         case "list_tk":
@@ -215,8 +220,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_tk = loadAll_taikhoan();
             include "taikhoan/list_tk.php";
             break;
-
-
         default:
             $list_dm = loadAll_danhmuc();
             include "home.php";
