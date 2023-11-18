@@ -1,6 +1,6 @@
 <?php
-if ($loaiga_update) {
-    extract($loaiga_update);
+if ($taikhoan_update) {
+    extract($taikhoan_update);
 ?>
     <div class="page-wrapper">
         <!-- ============================================================== -->
@@ -12,15 +12,15 @@ if ($loaiga_update) {
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h4 class="text-themecolor">Sửa loại gà</h4>
+                    <h4 class="text-themecolor">Sửa tài khoản</h4>
                 </div>
                 <div class="col-md-7 align-self-center text-end">
                     <div class="d-flex justify-content-end align-items-center">
                         <ol class="breadcrumb justify-content-end">
                             <li class="breadcrumb-item">
-                                <a href="javascript:void(0)">loại gà</a>
+                                <a href="javascript:void(0)">Tài khoản</a>
                             </li>
-                            <li class="breadcrumb-item active">Sửa loại gà</li>
+                            <li class="breadcrumb-item active">Sửa tài khoản</li>
                         </ol>
                         <a href="index.php?act=list_dm">
                             <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
@@ -126,15 +126,34 @@ if ($loaiga_update) {
             <!-- End Right sidebar -->
             <!-- ============================================================== -->
             <!-- Star content -->
-            <form action="index.php?act=update_lg" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
+            <form action="index.php?act=update_tk" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
                 <div class="form-group">
                     <input type="hidden" name="id" value="<?= $id ?>">
-                    <label for="txtTitle " class="form-label" id="lblTitle">Tên loại gà</label>
-                    <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
-                    <label for="txtTitle " class="form-label" id="lblTitle">Nội dung</label>
-                    <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Tên đăng nhập</label>
+                    <input type="text" class="form-control" name="user" id="txtTitle" placeholder="Nhập vào tên" style="margin-bottom: 10px;" value="<?= $user ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Pass</label>
+                    <input type="text" class="form-control" name="pass" id="txtTitle" placeholder="Nhập vào pass" style="margin-bottom: 10px;" value="<?= $pass ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Họ và tên</label>
+                    <input type="text" class="form-control" name="hoten" id="txtTitle" placeholder="Nhập vào họ và tên" style="margin-bottom: 10px;" value="<?= $hoten ?>">
                     <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
                     <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Email</label>
+                    <input type="text" class="form-control" name="email" id="txtTitle" placeholder="Nhập vào email" style="margin-bottom: 10px;" value="<?= $email ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Address</label>
+                    <input type="text" class="form-control" name="address" id="txtTitle" placeholder="Nhập vào địa chỉ" style="margin-bottom: 10px;" value="<?= $address ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Tel</label>
+                    <input type="text" class="form-control" name="tel" id="txtTitle" placeholder="Nhập vào SĐT" style="margin-bottom: 10px;" value="<?= $tel ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Role</label> <br>
+                    <select name="id_role" id="">
+                        <?php
+                        foreach ($list_role as $role) {
+                            extract($role);
+                        ?>
+                            <option value="<?= $id ?>" <?= $id == $taikhoan_update['id'] ? "selected" : "" ?>><?= $name ?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
                 </div>
                 <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
                 <input type="reset" class="btn btn-primary text-white" value="Reset">

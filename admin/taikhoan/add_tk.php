@@ -8,19 +8,19 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h4 class="text-themecolor">Danh sách</h4>
+                <h4 class="text-themecolor">Thêm tài khoản</h4>
             </div>
             <div class="col-md-7 align-self-center text-end">
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">loại gà </a>
+                            <a href="javascript:void(0)">Tài khoản</a>
                         </li>
-                        <li class="breadcrumb-item active">loại gà</li>
+                        <li class="breadcrumb-item active">Thêm tài khoản</li>
                     </ol>
-                    <a href="index.php?act=add_dm">
+                    <a href="index.php?act=list_dm">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
-                            <i class="fa fa-plus-circle"></i> Thêm mới loại gà
+                            <i class="fas fa-clipboard-list"></i> Danh sách
                         </button>
                     </a>
 
@@ -122,48 +122,38 @@
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
         <!-- Star content -->
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Danh sách loại gà </h4>
-                <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <?php
-                            if ($list_lg) {
-                                foreach ($list_lg as $loaiga) {
-                                    extract($loaiga);
-                                    $sualg = "index.php?act=sualg&id=" . $id;
-                                    $xoalg = "index.php?act=xoalg&id=" . $id;
-                            ?>
-                                    <tr>
-                                        <td><?= $id ?></td>
-                                        <td><?= $name ?></td>
-                                        <td><img width="100px" src="../upload/<?= $image ?>" alt=""></td>
-                                        <td>
-                                            <a href="<?php echo $sualg ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
-                                            </a> 
-                                            <a href="<?php echo $xoalg ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
-                                        </td>
-                                    </tr>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+        <form action="index.php?act=add_tk" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
+            <div class="form-group">
+                <label for="txtTitle " class="form-label" id="lblTitle">Tên đăng nhập</label>
+                <input type="text" class="form-control" name="user" id="txtTitle" placeholder="Nhập vào tên" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Pass</label>
+                <input type="text" class="form-control" name="pass" id="txtTitle" placeholder="Nhập vào pass" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Họ và tên</label>
+                <input type="text" class="form-control" name="hoten" id="txtTitle" placeholder="Nhập vào họ và tên" style="margin-bottom: 10px;">
+                <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
+                <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Email</label>
+                <input type="text" class="form-control" name="email" id="txtTitle" placeholder="Nhập vào email" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Address</label>
+                <input type="text" class="form-control" name="address" id="txtTitle" placeholder="Nhập vào địa chỉ" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Tel</label>
+                <input type="text" class="form-control" name="tel" id="txtTitle" placeholder="Nhập vào SĐT" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Role</label> <br>
+                <select name="id_role" id="">
+                    <?php
+                    foreach ($list_role as $role) {
+                        extract($role);
+                    ?>
+                        <option value="<?= $id ?>"><?= $name ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
             </div>
-        </div>
+            <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
+            <input type="reset" class="btn btn-primary text-white" value="Reset">
+            <a href="index.php?act=list_dm"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
+        </form>
         <!-- End content -->
     </div>
     <!-- ============================================================== -->
