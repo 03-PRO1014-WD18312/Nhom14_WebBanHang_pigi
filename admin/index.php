@@ -4,6 +4,11 @@ include "../model/pdo.php";
 include "../model/danhmuc.php";
 include "../model/dichvu.php";
 include "../model/taikhoan.php";
+include "../model/loaiga.php";
+include "../model/loainuoc.php";
+include "../model/loaimi.php";
+include "../model/loaikhoai.php";
+include "../model/sanpham.php";
 
 if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
     include "layout/header.php";
@@ -242,9 +247,128 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                     <script>
                         window.location.href = 'index.php';
                     </script>
+                <?php
+                }
+                break;
+                // Sản phẩm
+            case "add_sp":
+                $list_dm = loadAll_danhmuc();
+                $list_lg = loadAll_loaiga();
+                $list_nc = loadAll_loainuoc();
+                $list_mi = loadAll_loaimi();
+                $list_khoai = loadAll_loaikhoai();
+                include "sanpham/add_sp.php";
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $imgname = $_FILES['image']['name'];
+                    $description = $_POST['description'];
+                    $id_dm = $_POST['id_dm'];
+                    $id_ga = $_POST['id_ga'];
+                    $soluong_ga = $_POST['soluong_ga'];
+                    $id_nuoc = $_POST['id_nuoc'];
+                    $soluong_nuoc = $_POST['soluong_nuoc'];
+                    $id_mi = $_POST['id_mi'];
+                    $soluong_mi = $_POST['soluong_mi'];
+                    $id_khoai = $_POST['id_khoai'];
+                    $soluong_khoai = $_POST['soluong_khoai'];
+
+                    if (isset($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            // echo "Sorry, there was an error uploading your file.";
+                        }
+                    }
+                    insert_sanpham($name, $price, $imgname, $description, $id_dm, $id_ga, $soluong_ga, $id_nuoc, $soluong_nuoc, $id_mi, $soluong_mi, $id_khoai, $soluong_khoai);
+                    $thongbao = "Thêm thành công";
+                ?>
+                    <script>
+                        window.location.href = 'index.php?act=list_sp';
+                    </script>
                     <?php
                 }
                 break;
+            case "list_sp":
+                $list_sp = loadAll_sanpham();
+                $list_dm = loadAll_danhmuc();
+                $list_lg = loadAll_loaiga();
+                $list_nc = loadAll_loainuoc();
+                $list_mi = loadAll_loaimi();
+                $list_khoai = loadAll_loaikhoai();
+                include "sanpham/list_sp.php";
+                break;
+            case "xoasp":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    delete_sanpham($id);
+                }
+                $list_sp = loadAll_sanpham();
+                $list_dm = loadAll_danhmuc();
+                $list_lg = loadAll_loaiga();
+                $list_nc = loadAll_loainuoc();
+                $list_mi = loadAll_loaimi();
+                $list_khoai = loadAll_loaikhoai();
+                include "sanpham/list_sp.php";
+                break;
+            case "suasp":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $sanpham_update = loadOne_sanpham($id);
+                }
+                $list_sp = loadAll_sanpham();
+                $list_dm = loadAll_danhmuc();
+                $list_lg = loadAll_loaiga();
+                $list_nc = loadAll_loainuoc();
+                $list_mi = loadAll_loaimi();
+                $list_khoai = loadAll_loaikhoai();
+                include "sanpham/update_sp.php";
+                break;
+            case "update_sp":
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $id = $_POST['id'];
+                    var_dump($_POST);
+                    $sanpham_update = loadOne_sanpham($id);
+
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $imgname = $_FILES['image']['name'];
+                    $description = $_POST['description'];
+                    $id_dm = $_POST['id_dm'];
+                    $id_ga = $_POST['id_ga'];
+                    $soluong_ga = $_POST['soluong_ga'];
+                    $id_nuoc = $_POST['id_nuoc'];
+                    $soluong_nuoc = $_POST['soluong_nuoc'];
+                    $id_mi = $_POST['id_mi'];
+                    $soluong_mi = $_POST['soluong_mi'];
+                    $id_khoai = $_POST['id_khoai'];
+                    $soluong_khoai = $_POST['soluong_khoai'];
+
+                    if (!empty($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            // echo "Sorry, there was an error uploading your file.";
+                        }
+                    } else {
+                        $imgname = $sanpham_update['image'];
+                    }
+                    update_sanpham($id, $name, $price, $image, $description, $id_dm, $id_ga, $soluong_ga, $id_nuoc, $soluong_nuoc, $id_mi, $soluong_mi, $id_khoai, $soluong_khoai);
+                    $thongbao = "Cập nhật thành công";
+                }
+                $list_sp = loadAll_sanpham();
+                $list_dm = loadAll_danhmuc();
+                $list_lg = loadAll_loaiga();
+                $list_nc = loadAll_loainuoc();
+                $list_mi = loadAll_loaimi();
+                $list_khoai = loadAll_loaikhoai();
+                include "sanpham/list_sp.php";
+                break;
+
             default:
                 $list_dm = loadAll_danhmuc();
                 include "home.php";
@@ -308,7 +432,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 break;
             case "sign_up":
                 if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
-                    $user = $_POST['name'];
+                    $user = $_POST['user'];
                     $pass = md5($_POST['password']);
                     $confirmPass = md5($_POST['confirm_password']);
                     $hoten = $_POST['name'];

@@ -14,13 +14,13 @@
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">Danh mục</a>
+                            <a href="javascript:void(0)">Sản phẩm</a>
                         </li>
                         <li class="breadcrumb-item active">Danh sách</li>
                     </ol>
-                    <a href="index.php?act=add_dm">
+                    <a href="index.php?act=add_sp">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
-                            <i class="fa fa-plus-circle"></i> Thêm mới danh mục
+                            <i class="fa fa-plus-circle"></i> Thêm mới sản phẩm
                         </button>
                     </a>
 
@@ -124,7 +124,7 @@
         <!-- Star content -->
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Danh sách danh mục</h4>
+                <h4 class="card-title">Danh sách sản phẩm</h4>
                 <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                 <div class="table-responsive">
                     <table class="table">
@@ -132,27 +132,83 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Price</th>
                                 <th>Image</th>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>View</th>
+                                <th>Loại gà</th>
+                                <th>Số lượng gà</th>
+                                <th>Loại nước</th>
+                                <th>Số lượng nước</th>
+                                <th>Loại mì</th>
+                                <th>Số lượng mì</th>
+                                <th>Loại khoai</th>
+                                <th>Số lượng khoai</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
 
                         <tbody>
                             <?php
-                            if ($list_dm) {
-                                foreach ($list_dm as $danhmuc) {
-                                    extract($danhmuc);
-                                    $suadm = "index.php?act=suadm&id=" . $id;
-                                    $xoadm = "index.php?act=xoadm&id=" . $id;
+                            if ($list_sp) {
+                                foreach ($list_sp as $sanpham) {
+                                    extract($sanpham);
+                                    $suasp = "index.php?act=suasp&id=" . $id;
+                                    $xoasp = "index.php?act=xoasp&id=" . $id;
                             ?>
                                     <tr>
                                         <td><?= $id ?></td>
                                         <td><?= $name ?></td>
+                                        <td><?= $price ?></td>
                                         <td><img width="100px" src="../upload/<?= $image ?>" alt=""></td>
+                                        <td><?= $description ?></td>
                                         <td>
-                                            <a href="<?php echo $suadm ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
-                                            </a> 
-                                            <a href="<?php echo $xoadm ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
+                                            <?php
+                                            foreach ($list_dm as $danhmuc) {
+                                                echo $id_dm == $danhmuc['id'] ? $danhmuc['name'] : "";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><?= $view ?></td>
+                                        <td>
+                                            <?php
+                                            foreach ($list_lg as $loaiga) {
+                                                echo $id_ga == $loaiga['id'] ? $loaiga['name'] : "";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><?= $soluong_ga ?></td>
+                                        <td>
+                                            <?php
+                                            foreach ($list_nc as $loainuoc) {
+                                                echo $id_nuoc == $loainuoc['id'] ? $loainuoc['name'] : "";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><?= $soluong_nuoc ?></td>
+                                        <td>
+                                            <?php
+                                            foreach ($list_mi as $loaimi) {
+                                                echo $id_mi == $loaimi['id'] ? $loaimi['name'] : "";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><?= $soluong_mi ?></td>
+                                        <td>
+                                            <?php
+                                            foreach ($list_khoai as $loaikhoai) {
+                                                echo $id_khoai == $loaikhoai['id'] ? $loaikhoai['name'] : "";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><?= $soluong_khoai ?></td>
+
+
+                                        <td>
+                                            <a href="<?php echo $suasp ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
+                                            </a>
+                                            <a href="<?php echo $xoasp ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
                                         </td>
                                     </tr>
                             <?php
