@@ -1,6 +1,5 @@
 <?php
 include "../model/pdo.php";
-include "../model/danhmuc.php";
 include "../model/taikhoan.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     include "layout/header.php";
