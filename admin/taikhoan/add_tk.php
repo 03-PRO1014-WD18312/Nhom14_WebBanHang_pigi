@@ -139,7 +139,7 @@
                 <label for="txtTitle " class="form-label" id="lblTitle">Tel</label>
                 <input type="text" class="form-control" name="tel" id="txtTitle" placeholder="Nhập vào SĐT" style="margin-bottom: 10px;">
                 <label for="txtTitle " class="form-label" id="lblTitle">Role</label> <br>
-                <select name="id_role" id="">
+                <select class="form-select col-12" name="id_role" id="">
                     <?php
                     foreach ($list_role as $role) {
                         extract($role);

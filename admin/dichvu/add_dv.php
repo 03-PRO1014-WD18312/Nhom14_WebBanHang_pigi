@@ -18,7 +18,7 @@
                         </li>
                         <li class="breadcrumb-item active">Thêm dịch vụ </li>
                     </ol>
-                    <a href="index.php?act=list_dm">
+                    <a href="index.php?act=list_dv">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
                             <i class="fas fa-clipboard-list"></i> Danh sách
                         </button>
