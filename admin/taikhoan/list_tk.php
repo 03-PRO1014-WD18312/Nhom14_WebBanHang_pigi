@@ -139,7 +139,7 @@
                                 <th>Address</th>
                                 <th>Tel</th>
                                 <th>Role</th>
-                                <th>ction</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
 
