@@ -149,7 +149,7 @@ if ($taikhoan_update) {
                         foreach ($list_role as $role) {
                             extract($role);
                         ?>
-                            <option value="<?= $id ?>" <?= $id == $taikhoan_update['id'] ? "selected" : "" ?>><?= $name ?></option>
+                            <option value="<?= $id ?>" <?= $id == $taikhoan_update['id_role'] ? "selected" : "" ?>><?= $name ?></option>
                         <?php
                         }
                         ?>
