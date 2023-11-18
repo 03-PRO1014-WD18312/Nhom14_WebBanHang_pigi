@@ -14,13 +14,13 @@
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">loại gà </a>
+                            <a href="javascript:void(0)">Danh mục</a>
                         </li>
-                        <li class="breadcrumb-item active">loại gà</li>
+                        <li class="breadcrumb-item active">Danh sách</li>
                     </ol>
                     <a href="index.php?act=add_dm">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
-                            <i class="fa fa-plus-circle"></i> Thêm mới loại gà
+                            <i class="fa fa-plus-circle"></i> Thêm mới danh mục
                         </button>
                     </a>
 
@@ -124,35 +124,39 @@
         <!-- Star content -->
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Danh sách loại gà </h4>
+                <h4 class="card-title">Danh sách dịch vụ </h4>
                 <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                                <th>Actions</th>
+                                <th>title</th>
+                                <th>content</th>
+                                <th>image</th>
+                                <th>action</th>
                             </tr>
+
                         </thead>
 
                         <tbody>
                             <?php
-                            if ($list_lg) {
-                                foreach ($list_lg as $loaiga) {
-                                    extract($loaiga);
-                                    $sualg = "index.php?act=sualg&id=" . $id;
-                                    $xoalg = "index.php?act=xoalg&id=" . $id;
+                            if ($list_dv) {
+                                foreach ($list_dv as $dichvu) {
+                                    extract($dichvu);
+                                    $suadv = "index.php?act=suadv&id=" . $id;
+                                    $xoadv = "index.php?act=xoadv&id=" . $id;
                             ?>
                                     <tr>
                                         <td><?= $id ?></td>
-                                        <td><?= $name ?></td>
+                                        <td><?= $title ?></td>
+                                        <td><?= $content ?></td>
+                                        <td><?= $image ?></td>
                                         <td><img width="100px" src="../upload/<?= $image ?>" alt=""></td>
                                         <td>
-                                            <a href="<?php echo $sualg ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
+                                            <a href="<?php echo $suadv ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
                                             </a> 
-                                            <a href="<?php echo $xoalg ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
+                                            <a href="<?php echo $xoadv ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
                                         </td>
                                     </tr>
                             <?php

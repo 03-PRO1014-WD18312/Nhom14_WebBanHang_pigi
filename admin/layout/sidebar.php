@@ -51,7 +51,15 @@
             <li><a href="index.php?act=add_sp">Add sản phẩm</a></li>
           </ul>
         </li>
-
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa-solid fa-truck-fast"></i><span class="hide-menu">dịch vụ
+              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
+            </span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="index.php?act=list_dv">List dịch vụ</a></li>
+            <li><a href="index.php?act=add_dv">Add dịch vụ</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <!-- End Sidebar navigation -->
