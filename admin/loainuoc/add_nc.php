@@ -8,19 +8,19 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h4 class="text-themecolor">Danh sách</h4>
+                <h4 class="text-themecolor">Thêm loại nước</h4>
             </div>
             <div class="col-md-7 align-self-center text-end">
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">Danh dịch vụ</a>
+                            <a href="javascript:void(0)">Loại nước</a>
                         </li>
-                        <li class="breadcrumb-item active">Danh sách</li>
+                        <li class="breadcrumb-item active">Thêm loại nước</li>
                     </ol>
-                    <a href="index.php?act=add_dv">
+                    <a href="index.php?act=list_nc">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
-                            <i class="fa fa-plus-circle"></i> Thêm mới dịch vụ
+                            <i class="fas fa-clipboard-list"></i> Danh sách
                         </button>
                     </a>
 
@@ -122,51 +122,19 @@
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
         <!-- Star content -->
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Danh sách dịch vụ </h4>
-                <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Title</th>
-                                <th>Content</th>
-                                <th>Image</th>
-                                <th>Action</th>
-                            </tr>
-
-                        </thead>
-
-                        <tbody>
-                            <?php
-                            if ($list_dv) {
-                                foreach ($list_dv as $dichvu) {
-                                    extract($dichvu);
-                                    $suadv = "index.php?act=suadv&id=" . $id;
-                                    $xoadv = "index.php?act=xoadv&id=" . $id;
-                            ?>
-                                    <tr>
-                                        <td><?= $id ?></td>
-                                        <td><?= $title ?></td>
-                                        <td><?= $content ?></td>
-                                        <td><img width="100px" src="../upload/<?= $image ?>" alt=""></td>
-                                        <td>
-                                            <a href="<?php echo $suadv ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
-                                            </a>
-                                            <a href="<?php echo $xoadv ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
-                                        </td>
-                                    </tr>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+        <form action="index.php?act=add_nc" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
+            <div class="form-group">
+                <label for="txtTitle " class="form-label" id="lblTitle">Tên loại nước</label>
+                <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại nước" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Giá</label>
+                <input type="number" class="form-control" name="price" id="txtTitle" placeholder="Nhập giá" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Image</label>
+                <input type="file" class="form-control" name="image" id="txtTitle" style="margin-bottom: 10px;">
             </div>
-        </div>
+            <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
+            <input type="reset" class="btn btn-primary text-white" value="Reset">
+            <a href="index.php?act=list_nc"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
+        </form>
         <!-- End content -->
     </div>
     <!-- ============================================================== -->
