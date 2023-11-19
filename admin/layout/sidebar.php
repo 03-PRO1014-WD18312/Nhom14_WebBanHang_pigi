@@ -72,6 +72,24 @@ extract($_SESSION['user_login']);
             <li><a href="index.php?act=add_dv">Add dịch vụ</a></li>
           </ul>
         </li>
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-utensil-spoon"></i><span class="hide-menu">Loại gà
+              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
+            </span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="index.php?act=list_lg">List loại gà</a></li>
+            <li><a href="index.php?act=add_lg">Add loại gà</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-wine-glass"></i><span class="hide-menu">Loại nước
+              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
+            </span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="index.php?act=list_nc">List loại nước</a></li>
+            <li><a href="index.php?act=add_nc">Add loại nước</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <!-- End Sidebar navigation -->
