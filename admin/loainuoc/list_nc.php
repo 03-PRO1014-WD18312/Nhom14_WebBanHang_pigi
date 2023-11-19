@@ -14,13 +14,13 @@
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">Danh dịch vụ</a>
+                            <a href="javascript:void(0)">Loại nước</a>
                         </li>
-                        <li class="breadcrumb-item active">Danh sách</li>
+                        <li class="breadcrumb-item active">Loại nước</li>
                     </ol>
-                    <a href="index.php?act=add_dv">
+                    <a href="index.php?act=add_nc">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
-                            <i class="fa fa-plus-circle"></i> Thêm mới dịch vụ
+                            <i class="fa fa-plus-circle"></i> Thêm mới loại nước
                         </button>
                     </a>
 
@@ -124,38 +124,37 @@
         <!-- Star content -->
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Danh sách dịch vụ </h4>
+                <h4 class="card-title">Danh sách loại nước </h4>
                 <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Title</th>
-                                <th>Content</th>
+                                <th>Name</th>
+                                <th>Price</th>
                                 <th>Image</th>
-                                <th>Action</th>
+                                <th>Actions</th>
                             </tr>
-
                         </thead>
 
                         <tbody>
                             <?php
-                            if ($list_dv) {
-                                foreach ($list_dv as $dichvu) {
-                                    extract($dichvu);
-                                    $suadv = "index.php?act=suadv&id=" . $id;
-                                    $xoadv = "index.php?act=xoadv&id=" . $id;
+                            if ($list_nc) {
+                                foreach ($list_nc as $loainuoc) {
+                                    extract($loainuoc);
+                                    $suanc = "index.php?act=suanc&id=" . $id;
+                                    $xoanc = "index.php?act=xoanc&id=" . $id;
                             ?>
                                     <tr>
                                         <td><?= $id ?></td>
-                                        <td><?= $title ?></td>
-                                        <td><?= $content ?></td>
+                                        <td><?= $name ?></td>
+                                        <td><?= $price ?></td>
                                         <td><img width="100px" src="../upload/<?= $image ?>" alt=""></td>
                                         <td>
-                                            <a href="<?php echo $suadv ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
-                                            </a>
-                                            <a href="<?php echo $xoadv ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
+                                            <a href="<?php echo $suanc ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
+                                            </a> 
+                                            <a href="<?php echo $xoanc ?>"><input type="button" class="btn btn-danger text-white" value="Xóa"></a>
                                         </td>
                                     </tr>
                             <?php

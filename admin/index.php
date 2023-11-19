@@ -288,7 +288,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                     <script>
                         window.location.href = 'index.php?act=list_sp';
                     </script>
-                    <?php
+                <?php
                 }
                 break;
             case "list_sp":
@@ -369,6 +369,84 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 include "sanpham/list_sp.php";
                 break;
 
+                // loại nước:
+            case "add_nc":
+                include "loainuoc/add_nc.php";
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $imgname = $_FILES['image']['name'];
+                    echo $name . $price . $imgname;
+                    if (isset($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            // echo "Sorry, there was an error uploading your file.";
+                        }
+                    }
+                    insert_loainuoc($name, $price, $imgname);
+                    $thongbao = "Thêm thành công";
+                ?>
+                    <script>
+                        window.location.href = 'index.php?act=list_nc';
+                    </script>
+                <?php
+                }
+                break;
+
+            case "list_nc":
+                $list_nc = loadAll_loainuoc();
+                include "loainuoc/list_nc.php";
+                break;
+
+            case "xoanc":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    delete_loainuoc($id);
+                }
+                $list_nc = loadAll_loainuoc();
+                include "loainuoc/list_nc.php";
+                break;
+
+            case "suanc":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $loainuoc_update = loadOne_loainuoc($id);
+                }
+                include "loainuoc/update_nc.php";
+                break;
+            case "update_nc":
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $id = $_POST['id'];
+                    $loainuoc_update = loadOne_loainuoc($id);
+
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $imgname = $_FILES['image']['name'];
+                    if (!empty($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            // echo "Sorry, there was an error uploading your file.";
+                        }
+                    } else {
+                        $imgname = $loainuoc_update['image'];
+                    }
+                    update_loainuoc($id, $name, $price, $imgname);
+                    $thongbao = "Cập nhật thành công";
+                }
+                $list_nc = loadAll_loainuoc();
+                ?>
+                <script>
+                    window.location.href = 'index.php?act=list_nc';
+                </script>
+                <?php
+                break;
+
             default:
                 $list_dm = loadAll_danhmuc();
                 include "home.php";
@@ -397,7 +475,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                         if (isset($_SESSION['success'])) {
                             unset($_SESSION['success']);
                         }
-                    ?>
+                ?>
                         <script>
                             window.location.href = 'index.php?auth=update_pass';
                         </script>
