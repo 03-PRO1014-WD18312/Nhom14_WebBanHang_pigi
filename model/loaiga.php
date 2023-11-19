@@ -1,13 +1,13 @@
 <?php
 
-function insert_loaiga($name,$image)
+function insert_loaiga($name, $price, $image)
 {
-    $sql = "INSERT INTO loaiga(name,image) VALUES ('$name','$image')";
+    $sql = "INSERT INTO loaiga(name, price, imgname) VALUES ('$name', '$price', '$image')";
     pdo_execute($sql);
 }
-function update_loaiga($id, $name, $imgname)
+function update_loaiga($id, $name, $price, $image)
 {
-    $sql = "UPDATE loaiga SET name='$name', image='$imgname' WHERE id='$id'";
+    $sql = "UPDATE loaiga SET name='$name',price='$price', image='$image' WHERE id='$id'";
     pdo_execute($sql);
 }
 function delete_loaiga($id)

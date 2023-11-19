@@ -375,7 +375,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
                     $name = $_POST['name'];
                     $price = $_POST['price'];
-                    $imgname = $_FILES['image']['name'];
+                    $image = $_FILES['image']['name'];
 
                     if (isset($imgname)) {
                         $target_dir = "../upload/";
@@ -386,7 +386,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                             echo "Sorry, there was an error uploading your file.";
                         }
                     }
-                    insert_loaiga($name, $price, $imgname);
+                    insert_loaiga($name, $price, $image);
 
                 ?>
                     <script>
@@ -416,7 +416,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                     $loaiga_update = loadOne_loaiga($id);
                     $name = $_POST['name'];
                     $price = $_POST['price'];
-                    $imgname = $_FILES['image']['name'];
+                    $image = $_FILES['image']['name'];
                     if (!empty($imgname)) {
                         $target_dir = "../upload/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -426,9 +426,9 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                             echo "Sorry, there was an error uploading your file.";
                         }
                     } else {
-                        $imgname = $loaiga_update['image'];
+                        $image = $loaiga_update['image'];
                     }
-                    update_loaiga($id, $name, $price, $imgname);
+                    update_loaiga($id, $name, $price, $image);
                     $thongbao = "Cập nhật thành công";
 
                 ?>

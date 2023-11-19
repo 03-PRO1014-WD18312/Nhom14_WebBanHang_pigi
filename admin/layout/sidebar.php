@@ -72,15 +72,7 @@ extract($_SESSION['user_login']);
             <li><a href="index.php?act=add_dv">Add dịch vụ</a></li>
           </ul>
         </li>
-        <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa-solid fa-drumstick-bite"></i><span class="hide-menu">loại gà 
-              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
-            </span></a>
-          <ul aria-expanded="false" class="collapse">
-            <li><a href="index.php?act=list_lg">List loại gà</a></li>
-            <li><a href="index.php?act=add_lg">Add loại gà</a></li>
-          </ul>
-        </li>
+        
       </ul>
     </nav>
     <!-- End Sidebar navigation -->
