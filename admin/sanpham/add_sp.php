@@ -141,11 +141,11 @@
                 <label for="txtTitle " class="form-label" id="lblTitle">Tên sản phẩm</label>
                 <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên sản phẩm" style="margin-bottom: 10px;">
                 <label for="txtTitle " class="form-label" id="lblTitle">Giá sản phẩm</label>
-                <input type="number" class="form-control" required name="price" id="txtTitle" placeholder="Nhập tên giá sản phẩm" style="margin-bottom: 10px;">
+                <input type="number" class="form-control" required name="price" id="txtTitle" placeholder="Nhập giá sản phẩm" style="margin-bottom: 10px;">
                 <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
                 <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
                 <label for="txtTitle " class="form-label" id="lblTitle">Description</label>
-                <input type="text" class="form-control" name="description" id="txtTitle" placeholder="Nhập tên sản phẩm" style="margin-bottom: 10px;">
+                <input type="text" class="form-control" name="description" id="txtTitle" placeholder="Nhập mô tả sản phẩm" style="margin-bottom: 10px;">
                 <h5 class="card-subtitle" style="margin-top: 1.625rem;margin-bottom: 8px;"> Thuộc tính sản phẩm: </h5>
                 <!-- Gà -->
                 <div class="row">

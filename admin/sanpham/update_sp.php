@@ -144,7 +144,7 @@ if ($sanpham_update) {
                     <label for="txtTitle " class="form-label" id="lblTitle">Tên sản phẩm</label>
                     <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên sản phẩm" style="margin-bottom: 10px;" value="<?= $name ?>">
                     <label for="txtTitle " class="form-label" id="lblTitle">Giá sản phẩm</label>
-                    <input type="number" class="form-control" required name="price" id="txtTitle" placeholder="Nhập tên giá sản phẩm" style="margin-bottom: 10px;" value="<?= $price ?>">
+                    <input type="number" class="form-control" required name="price" id="txtTitle" placeholder="Nhập giá sản phẩm" style="margin-bottom: 10px;" value="<?= $price ?>">
                     <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
                     <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
                     <label for="txtTitle " class="form-label" id="lblTitle">Description</label>
