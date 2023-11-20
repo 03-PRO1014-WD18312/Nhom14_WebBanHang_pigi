@@ -1,3 +1,5 @@
 <div class="container">
-Đây là content
+    <div class="banner">
+        <a href="#">ĐẶT HÀNG</a>
+    </div>
 </div>
