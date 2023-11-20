@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/view/css/style.css" />
     <link rel="stylesheet" href="assets/view/font/fontawesome-free-6.2.1-web/css/all.min.css" />
-    <title>Document</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/view/image/logo_pigi.png" />
+    <title>Pigi</title>
 </head>
 
 <body>
@@ -20,13 +21,25 @@
             <nav>
                 <ul>
                     <li>
-                        <a class="menu-item" href="#">Trang chủ</a>
+                        <a class="menu-item" href="index.php" <?php if (!isset($_GET['act'])) {
+                                                                    echo 'style="color: #e31837; background-color: #f4d2d6"';
+                                                                } ?>>Trang chủ</a>
                     </li>
-                    <li><a class="menu-item" href="#">Về Pigi</a></li>
-                    <li><a class="menu-item" href="#">Thực đơn</a></li>
-                    <li><a class="menu-item" href="#">Dịch vụ</a></li>
-                    <li><a class="menu-item" href="#">Tin tức</a></li>
-                    <li><a class="menu-item" href="#">Liên hệ</a></li>
+                    <li><a class="menu-item" href="index.php?act=gioithieu" <?php if (isset($_GET['act']) && $_GET['act'] == "gioithieu") {
+                                                                                echo 'style="color: #e31837; background-color: #f4d2d6"';
+                                                                            } ?>>Về Pigi</a></li>
+                    <li><a class="menu-item" href="index.php?act=thucdon" <?php if (isset($_GET['act']) && $_GET['act'] == "thucdon") {
+                                                                                echo 'style="color: #e31837; background-color: #f4d2d6"';
+                                                                            } ?>>Thực đơn</a></li>
+                    <li><a class="menu-item" href="index.php?act=dichvu" <?php if (isset($_GET['act']) && $_GET['act'] == "dichvu") {
+                                                                                echo 'style="color: #e31837; background-color: #f4d2d6"';
+                                                                            } ?>>Dịch vụ</a></li>
+                    <li><a class="menu-item" href="index.php?act=tintuc" <?php if (isset($_GET['act']) && $_GET['act'] == "tintuc") {
+                                                                                echo 'style="color: #e31837; background-color: #f4d2d6"';
+                                                                            } ?>>Tin tức</a></li>
+                    <li><a class="menu-item" href="index.php?act=lienhe" <?php if (isset($_GET['act']) && $_GET['act'] == "lienhe") {
+                                                                                echo 'style="color: #e31837; background-color: #f4d2d6"';
+                                                                            } ?>>Liên hệ</a></li>
                 </ul>
             </nav>
             <div class="header-login-pickup">
