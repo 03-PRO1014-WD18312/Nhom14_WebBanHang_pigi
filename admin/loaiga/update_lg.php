@@ -132,7 +132,7 @@ if ($loaiga_update) {
                     <label for="txtTitle " class="form-label" id="lblTitle">Tên loại gà</label>
                     <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
                     <label for="txtTitle " class="form-label" id="lblTitle">Nội dung</label>
-                    <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
+                    <input type="text" class="form-control" name="price" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
                     <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
                     <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
                 </div>

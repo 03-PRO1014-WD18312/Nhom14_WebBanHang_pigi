@@ -1,28 +1,28 @@
 <?php
 
-// function insert_loaiga($name,$image)
-// {
-//     $sql = "INSERT INTO danhmuc(name,image) VALUES ('$name','$image')";
-//     pdo_execute($sql);
-// }
-// function update_danhmuc($id, $name, $imgname)
-// {
-//     $sql = "UPDATE danhmuc SET name='$name', image='$imgname' WHERE id='$id'";
-//     pdo_execute($sql);
-// }
-// function delete_danhmuc($id)
-// {
-//     $sql = "DELETE FROM danhmuc WHERE id='$id'";
-//     pdo_execute($sql);
-// }
+function insert_loaiga($name, $price, $image)
+{
+    $sql = "INSERT INTO loaiga(name, price, imgname) VALUES ('$name', '$price', '$image')";
+    pdo_execute($sql);
+}
+function update_loaiga($id, $name, $price, $image)
+{
+    $sql = "UPDATE loaiga SET name='$name',price='$price', image='$image' WHERE id='$id'";
+    pdo_execute($sql);
+}
+function delete_loaiga($id)
+{
+    $sql = "DELETE FROM loaiga WHERE id='$id'";
+    pdo_execute($sql);
+}
 function loadAll_loaiga()
 {
     $sql = "SELECT * FROM loaiga";
     return pdo_query($sql);
 }
-// function loadOne_danhmuc($id)
-// {
-//     $sql = "SELECT * FROM danhmuc WHERE id='$id'";
-//     return pdo_query_one($sql);
-    
-// }
+function loadOne_loaiga($id)
+{
+    $sql = "SELECT * FROM loaiga WHERE id='$id'";
+    return pdo_query_one($sql);
+
+}
