@@ -329,7 +329,6 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
             case "update_sp":
                 if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
                     $id = $_POST['id'];
-                    var_dump($_POST);
                     $sanpham_update = loadOne_sanpham($id);
 
                     $name = $_POST['name'];
@@ -357,7 +356,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                     } else {
                         $imgname = $sanpham_update['image'];
                     }
-                    update_sanpham($id, $name, $price, $image, $description, $id_dm, $id_ga, $soluong_ga, $id_nuoc, $soluong_nuoc, $id_mi, $soluong_mi, $id_khoai, $soluong_khoai);
+                    update_sanpham($id, $name, $price, $imgname, $description, $id_dm, $id_ga, $soluong_ga, $id_nuoc, $soluong_nuoc, $id_mi, $soluong_mi, $id_khoai, $soluong_khoai);
                     $thongbao = "Cập nhật thành công";
                 }
                 $list_sp = loadAll_sanpham();
@@ -379,7 +378,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                         $target_dir = "../upload/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
                         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-                           echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                            echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
                         } else {
                             echo "Sorry, there was an error uploading your file.";
                         }
@@ -388,7 +387,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 ?>
                     <script>
                         window.location.href = 'index.php?act=list_lg';
-                            </script>
+                    </script>
                 <?php
                 }
                 break;
@@ -414,12 +413,12 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                     $name = $_POST['name'];
                     $price = $_POST['price'];
                     $imgname = $_FILES['image']['name'];
-                  
+
                     if (!empty($imgname)) {
                         $target_dir = "../upload/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
-                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {    
-                          // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
                         } else {
                             //echo "Sorry, there was an error uploading your file.";
                         }
