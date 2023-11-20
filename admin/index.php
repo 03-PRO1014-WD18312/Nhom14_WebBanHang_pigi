@@ -368,7 +368,77 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 $list_khoai = loadAll_loaikhoai();
                 include "sanpham/list_sp.php";
                 break;
-
+                // Loai ga
+            case "add_lg":
+                include "loaiga/add_lg.php";
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $image = $_FILES['image']['name'];
+                    if (isset($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                           echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            echo "Sorry, there was an error uploading your file.";
+                        }
+                    }
+                    insert_loaiga($name, $price, $image);
+                ?>
+                    <script>
+                        window.location.href = 'index.php?act=list_lg';
+                            </script>
+                <?php
+                }
+                break;
+            case "xoalg":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    delete_loaiga($id);
+                }
+                $list_lg = loadAll_loaiga();
+                include "loaiga/list_lg.php";
+                break;
+            case "sualg":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $loaiga_update = loadOne_dichvu($id);
+                }
+                include "loaiga/update_lg.php";
+                break;
+            case "update_lg":
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $id = $_POST['id'];
+                    $loaiga_update = loadOne_loaiga($id);
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $imgname = $_FILES['image']['name'];
+                  
+                    if (!empty($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {    
+                          // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            //echo "Sorry, there was an error uploading your file.";
+                        }
+                    } else {
+                        $image = $loaiga_update['image'];
+                    }
+                    update_loaiga($id, $name, $price, $image);
+                    $thongbao = "Cập nhật thành công";
+                ?>
+                    <script>
+                        window.location.href = 'index.php?act=list_lg';
+                    </script>
+                <?php
+                }
+                break;
+            case "list_lg":
+                $list_lg = loadAll_loaiga();
+                include "loaiga/list_lg.php";
+                break;
                 // loại nước:
             case "add_nc":
                 include "loainuoc/add_nc.php";
@@ -376,7 +446,6 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                     $name = $_POST['name'];
                     $price = $_POST['price'];
                     $imgname = $_FILES['image']['name'];
-                    echo $name . $price . $imgname;
                     if (isset($imgname)) {
                         $target_dir = "../upload/";
                         $target_file = $target_dir . basename($_FILES["image"]["name"]);
@@ -395,7 +464,6 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 <?php
                 }
                 break;
-
             case "list_nc":
                 $list_nc = loadAll_loainuoc();
                 include "loainuoc/list_nc.php";
@@ -421,7 +489,6 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
                     $id = $_POST['id'];
                     $loainuoc_update = loadOne_loainuoc($id);
-
                     $name = $_POST['name'];
                     $price = $_POST['price'];
                     $imgname = $_FILES['image']['name'];
@@ -446,6 +513,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 </script>
                 <?php
                 break;
+
 
             default:
                 $list_dm = loadAll_danhmuc();
