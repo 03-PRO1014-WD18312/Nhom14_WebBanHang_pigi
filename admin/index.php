@@ -513,6 +513,156 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 <?php
                 break;
 
+                // loại mì
+            case "add_lm":
+                include "loaimi/add_lm.php";
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $imgname = $_FILES['image']['name'];
+                    if (isset($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            echo "Sorry, there was an error uploading your file.";
+                        }
+                    }
+                    insert_loaimi($name, $price, $imgname);
+                    $thongbao = "Thêm thành công";
+                ?>
+                    <script>
+                        window.location.href = 'index.php?act=list_lm';
+                    </script>
+                <?php
+                }
+                break;
+            case "list_lm":
+                $list_lm = loadAll_loaimi();
+                include "loaimi/list_lm.php";
+                break;
+
+            case "xoalm":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    delete_loaimi($id);
+                }
+                $list_lm = loadAll_loaimi();
+                include "loaimi/list_lm.php";
+                break;
+
+            case "sualm":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $loaimi_update = loadOne_loaimi($id);
+                }
+                include "loaimi/update_lm.php";
+                break;
+            case "update_lm":
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $id = $_POST['id'];
+                    $loaimi_update = loadOne_loaimi($id);
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $imgname = $_FILES['image']['name'];
+                    if (!empty($imgname)) {
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                        if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                            // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                        } else {
+                            // echo "Sorry, there was an error uploading your file.";
+                        }
+                    } else {
+                        $imgname = $loaimi_update['image'];
+                    }
+                    update_loaimi($id, $name, $price, $imgname);
+                    $thongbao = "Cập nhật thành công";
+                }
+                $list_lm = loadAll_loaimi();
+                ?>
+                <script>
+                    window.location.href = 'index.php?act=list_lm';
+                </script>
+                <?php
+                break;
+
+                // loại khoai
+                case "add_lk":
+                    include "loaikhoai/add_lk.php";
+                    if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                        $name = $_POST['name'];
+                        $price = $_POST['price'];
+                        $imgname = $_FILES['image']['name'];
+                        if (isset($imgname)) {
+                            $target_dir = "../upload/";
+                            $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                            if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                                echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                            } else {
+                                echo "Sorry, there was an error uploading your file.";
+                            }
+                        }
+                        insert_loaikhoai($name, $price, $imgname);
+                        $thongbao = "Thêm thành công";
+                    ?>
+                        <script>
+                            window.location.href = 'index.php?act=list_lk';
+                        </script>
+                    <?php
+                    }
+                    break;
+                    case "list_lk":
+                        $list_lk = loadAll_loaikhoai();
+                        include "loaikhoai/list_lk.php";
+                        break;
+        
+                    case "xoalk":
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            $id = $_GET['id'];
+                            delete_loaikhoai($id);
+                        }
+                        $list_lk = loadAll_loaikhoai();
+                        include "loaikhoai/list_lk.php";
+                        break;
+        
+                    case "sualk":
+                        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                            $id = $_GET['id'];
+                            $loaikhoai_update = loadOne_loaikhoai($id);
+                        }
+                        include "loaikhoai/update_lk.php";
+                        break;
+                    case "update_lk":
+                        if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                            $id = $_POST['id'];
+                            $loaikhoai_update = loadOne_loaikhoai($id);
+                            $name = $_POST['name'];
+                            $price = $_POST['price'];
+                            $imgname = $_FILES['image']['name'];
+                            if (!empty($imgname)) {
+                                $target_dir = "../upload/";
+                                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                                if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+                                    // echo "The file " . htmlspecialchars(basename($_FILES["image"]["name"])) . " has been uploaded.";
+                                } else {
+                                    // echo "Sorry, there was an error uploading your file.";
+                                }
+                            } else {
+                                $imgname = $loaikhoai_update['image'];
+                            }
+                            update_loaikhoai($id, $name, $price, $imgname);
+                            $thongbao = "Cập nhật thành công";
+                        }
+                        $list_lk = loadAll_loaikhoai();
+                        ?>
+                        <script>
+                            window.location.href = 'index.php?act=list_lk';
+                        </script>
+                        <?php
+                        break;
+
 
             default:
                 $list_dm = loadAll_danhmuc();
