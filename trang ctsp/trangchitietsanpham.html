@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/trang ctsp/chitietsanpham.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css" />
+    <title>Document</title>
+  </head>
+<!-- phần đầu -->
+  <body>
+    <div class="page-wapper">
+      <header class="page-header">
+        <div class="logo-header">
+          <a
+            class="logo"
+            href="https://jollibee.com.vn/"
+            title="Logo Jollibee"
+            aria-label="store logo"
+          >
+            <img
+              src="https://jollibee.com.vn/static/version1699974795/frontend/Jollibee/default/vi_VN/images/logo.png"
+              title="Logo Jollibee"
+              alt="Logo Jollibee"
+              width="100"
+              height="100"
+            />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a class="menu-item" href="#">Trang chủ</a>
+            </li>
+            <li><a class="menu-item" href="#">Về Pigi</a></li>
+            <li><a class="menu-item" href="#">Thực đơn</a></li>
+            <li><a class="menu-item" href="#">Dịch vụ</a></li>
+            <li><a class="menu-item" href="#">Tin tức</a></li>
+            <li><a class="menu-item" href="#">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <div class="header-login-pickup">
+          <div class="header__cart">
+            <div class="header__car-warp">
+              <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+              <span class="header__car-notice">3</span>
+              <!-- No cart: header__cart-list--no-cart -->
+              <div class="header__cart-list">
+                <img
+                  src="no-cart.png"
+                  alt=""
+                  class="header__cart-list--no-cart-img"
+                />
+                <span class="header__cart-list-no-cart-msg"
+                  >Chưa có sản phẩm</span
+                >
+                <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                <ul class="header__cart-list-item">
+                  <!-- Cart item -->
+                  <li class="header__cart-item">
+                    <img
+                      src="https://static.myphamyenphuong.com/hinh_sanpham/web-1619657701.jpg"
+                      alt=""
+                      class="header__cart-img"
+                    />
+                    <div class="header__cart-item-info">
+                      <div class="header__cart-item-head">
+                        <h5 class="header__cart-item-name">
+                          Bộ kem đặc trị vùng mắt
+                        </h5>
+                        <div class="header__cart-item-price-warp">
+                          <span class="header__cart-item-price"
+                            >2.000.000 đ</span
+                          >
+                          <span class="header__cart-item-multiply">x</span>
+                          <span class="header__cart-item-qnt">2</span>
+                        </div>
+                      </div>
+                      <div class="header__cart-item-body">
+                        <span class="header__cart-item-description">
+                          Phân loại
+                        </span>
+                        <span class="header__cart-item-remove">Xóa</span>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="header__cart-item">
+                    <img
+                      src="https://static.myphamyenphuong.com/hinh_sanpham/web-1619657701.jpg"
+                      alt=""
+                      class="header__cart-img"
+                    />
+                    <div class="header__cart-item-info">
+                      <div class="header__cart-item-head">
+                        <h5 class="header__cart-item-name">
+                          Bộ kem đặc trị vùng mắt
+                        </h5>
+                        <div class="header__cart-item-price-warp">
+                          <span class="header__cart-item-price"
+                            >2.000.000 đ</span
+                          >
+                          <span class="header__cart-item-multiply">x</span>
+                          <span class="header__cart-item-qnt">2</span>
+                        </div>
+                      </div>
+                      <div class="header__cart-item-body">
+                        <span class="header__cart-item-description">
+                          Phân loại
+                        </span>
+                        <span class="header__cart-item-remove">Xóa</span>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="header__cart-item">
+                    <img
+                      src="https://static.myphamyenphuong.com/hinh_sanpham/web-1619657701.jpg"
+                      alt=""
+                      class="header__cart-img"
+                    />
+                    <div class="header__cart-item-info">
+                      <div class="header__cart-item-head">
+                        <h5 class="header__cart-item-name">
+                          Bộ kem đặc trị vùng mắt
+                        </h5>
+                        <div class="header__cart-item-price-warp">
+                          <span class="header__cart-item-price"
+                            >2.000.000 đ</span
+                          >
+                          <span class="header__cart-item-multiply">x</span>
+                          <span class="header__cart-item-qnt">2</span>
+                        </div>
+                      </div>
+                      <div class="header__cart-item-body">
+                        <span class="header__cart-item-description">
+                          Phân loại
+                        </span>
+                        <span class="header__cart-item-remove">Xóa</span>
+                      </div>
+                    </div>
+                  </li>
+                  <a href="#" class="header__cart-view-cart btn btn--primary"
+                    >Xem giỏ hàng</a
+                  >
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="pickup-wrapper">
+            <a class="action-login" href="#">Đăng nhập</a>
+          </div>
+          <div class="pickup-wrapper">
+            <a class="action-logup" href="#">Đăng ký</a>
+          </div>
+        </div>
+      </header>
+   
+<!-- phần giữa  -->
+      <div class="row mb  ">
+        
+            <div class="row">
+                <div class="banner">
+                    <img src="img/OIP (10).jpg" alt="">
+                </div>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh (1).jpg" alt=""></div>
+                <p>$30</p>
+                <a href="#">2 MIẾNG GÀ GIÒN + KHOAI TÂY VỪA + NƯỚC NGỌT LỚN</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh (2).jpg" alt=""></div>
+                <p>$40</p>
+                <a href="#">01 MIẾNG GÀ GIÒN VUI VẺ + 1 MỲ Ý SỐT BÒ BẰM + 01 NƯỚC NGỌT LỚN</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh (3).jpg" alt=""></div>
+                <p>$50</p>
+                <a href="#">MÌ Ý SỐT BÒ BẰM LỚN + 1 MIẾNG GÀ RÁN + NƯỚC NGỌT LỚN</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh (4).jpg" alt=""></div>
+                <p>$30</p>
+                <a href="#">COMBO 185K (3 MIẾNG GÀ GIÒN + 2 MÌ Ý + 1 KHOAI VỪA + 3 NƯỚC NGỌT VỪA)</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh 5.jpg" alt=""></div>
+                <p>$660</p>
+                <a href="#">COMBO CẶP ĐÔI ĂN Ý 145K (2 GÀ GIÒN VUI VẺ + 2 MỲ Ý SỐT BÒ BẰM + 1 KHOAI VỪA + 2 NƯỚC NGỌT)</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh 6.jpg" alt=""></div>
+                <p>$30</p>
+                <a href="#">COMBO 322K (2 MIẾNG GÀ GIÒN + 2 MÌ Ý + 2 CƠM GÀ GIÒN + 2 KHOAI TÂY VỪA + 2 BÁNH XOÀI ĐÀO + 4 NƯỚC NGỌT LỚN)</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh(7).jpg" alt=""></div>
+                <p>$70</p>
+                <a href="#">TIỆC KIỂU MỚI, QUÀ CHUẨN GU 499K</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh (1).jpg" alt=""></div>
+                <p>$30</p>
+                <a href="#">TIỆC KIỂU MỚI, QUÀ CHUẨN GU 599K</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+            <div class="boxsp mr">
+                <div class="img"><img src="img/anh (2).jpg" alt=""></div>
+                <p>$80</p>
+                <a href="#">TIỆC KIỂU MỚI, QUÀ CHUẨN GU 699K</a>
+                <br>
+                <button>Đặt hàng</button>
+            </div>
+        
+
+      <!-- phần cuối  -->
+      <footer class="page-footer">
+        <div class="footer content">
+          <div class="footer-text-container">
+            <div class="row">
+              <div class="col col-5 address">
+                <div class="footer-logo">
+                  <img
+                    src="https://jollibee.com.vn/media/logo-footer.png"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <p>CÔNG TY TNHH JOLLIBEE VIỆT NAM</p>
+                  <p>
+                    Địa chỉ: Tầng 26, Tòa nhà CII Tower, số 152 Điện Biên Phủ,
+                    Phường 25, Quận Bình Thạnh, Thành phố Hồ Chí Minh, Việt Nam
+                  </p>
+                  <p>Điện thoại: (028) 39309168</p>
+                  <p>Tổng đài: <a href="tel:19001533">1900-1533</a></p>
+                  <p>Mã số thuế: 0303883266</p>
+                  <p>Ngày cấp: 15/07/2008 – Nơi cấp: Cục Thuế Hồ Chí Minh</p>
+                  <p>
+                    Hộp thư góp ý:
+                    <a href="mailto:jbvnfeedback@jollibee.com.vn"
+                      >jbvnfeedback@jollibee.com.vn</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div class="col col-3">
+                <img
+                  src="https://jollibee.com.vn/media/wysiwyg/delivery-lg_1.png"
+                  alt=""
+                />
+                <ul>
+                  <li><a href="/lien-he">Liên hệ</a></li>
+                  <li>
+                    <a href="/chinh-sach-va-quy-dinh-chung"
+                      >Chính sách và quy định chung</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/chinh-sach-thanh-toan-khi-dat-hang"
+                      >Chính sách thanh toán khi đặt hàng</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/chinh-sach-hoat-dong">Chính sách hoạt động</a>
+                  </li>
+                  <li>
+                    <a href="/chinh-sach-bao-mat"
+                      >Chính sách bảo mật thông tin</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/thong-tin-van-chuyen-va-giao-nhan"
+                      >Thông tin vận chuyển và giao nhận</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/thong-tin-dang-ky-giao-dich-chung"
+                      >Thông tin đăng ký giao dịch chung</a
+                    >
+                  </li>
+                  <li>
+                    <a href="/huong-dan-dat-phan-an">Hướng dẫn đặt phần ăn</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col col-3">
+                <p class="text-uppercase title">HÃY KẾT NỐI VỚI CHÚNG TÔI</p>
+                <div class="block-social no-padding display-flex">
+                  <a href="http://www.facebook.com/JollibeeVietnam"
+                    ><img
+                      src="https://jollibee.com.vn/media/wysiwyg/icon-fb.png"
+                      alt="Facebook"
+                      width="34"
+                    /><span>Facebook </span></a
+                  >
+                  <a href="mailto:jbvnfeedback@jollibee.com.vn"
+                    ><img
+                      src="https://jollibee.com.vn/media/wysiwyg/icon-mail.png"
+                      alt="Google mail"
+                      width="34"
+                    />
+                    <span>E-Mail</span></a
+                  >
+                </div>
+                <a
+                  href="http://online.gov.vn/Home/WebDetails/92800"
+                  target="_blank"
+                  rel="noopener"
+                  ><img
+                    src="https://jollibee.com.vn/media/wysiwyg/bocongthuong.png"
+                    alt=""
+                /></a>
+                <hr />
+                <div>
+                  <p
+                    style="
+                      font-family: 'MergeBlack', sans-serif;
+                      font-weight: bold;
+                      text-align: left;
+                      text-transform: uppercase;
+                      margin-bottom: 20px;
+                    "
+                  >
+                    <span style="color: #ffffff"
+                      >TẢI ỨNG DỤNG ĐẶT HÀNG VỚI NHIỀU ƯU ĐÃI HƠN</span
+                    >
+                  </p>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.jollibee.loyalty"
+                  >
+                    <img
+                      src="https://jollibee.com.vn/media/jollibee/logo_playstore.png"
+                      alt=""
+                      width="140"
+                      height="42" /></a
+                  ><a
+                    href="https://apps.apple.com/vn/app/jollibee-vietnam/id1554984107"
+                  >
+                    <img
+                      src="https://jollibee.com.vn/media/jollibee/logo_appstore.png"
+                      alt=""
+                      width="140"
+                      height="42"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <small class="copyright">
+          <span>© 2020 Pigi Viet Nam</span>
+        </small>
+      </footer>
+    </div>
+  </body>
+</html>
