@@ -2,7 +2,7 @@
 
 function insert_loaiga($name, $price, $image)
 {
-    $sql = "INSERT INTO loaiga(name, price, imgname) VALUES ('$name', '$price', '$image')";
+    $sql = "INSERT INTO loaiga(name, price, image) VALUES ('$name', '$price', '$image')";
     pdo_execute($sql);
 }
 function update_loaiga($id, $name, $price, $image)
