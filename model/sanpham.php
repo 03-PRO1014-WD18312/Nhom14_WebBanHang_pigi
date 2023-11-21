@@ -26,3 +26,8 @@ function loadOne_sanpham($id)
     $sql = "SELECT * FROM sanpham WHERE id='$id'";
     return pdo_query_one($sql);
 }
+function loadAll_sanpham_home()
+{
+    $sql = "SELECT * FROM sanpham where 1 order by id desc limit 0,9";
+    return pdo_query($sql);
+}

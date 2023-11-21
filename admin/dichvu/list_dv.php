@@ -14,13 +14,13 @@
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">Danh mục</a>
+                            <a href="javascript:void(0)">Danh dịch vụ</a>
                         </li>
                         <li class="breadcrumb-item active">Danh sách</li>
                     </ol>
                     <a href="index.php?act=add_dv">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
-                            <i class="fa fa-plus-circle"></i> Thêm mới danh mục
+                            <i class="fa fa-plus-circle"></i> Thêm mới dịch vụ
                         </button>
                     </a>
 
@@ -131,10 +131,10 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>title</th>
-                                <th>content</th>
-                                <th>image</th>
-                                <th>action</th>
+                                <th>Title</th>
+                                <th>Content</th>
+                                <th>Image</th>
+                                <th>Action</th>
                             </tr>
 
                         </thead>
