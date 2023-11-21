@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="javascript:void(0)">loại gà </a>
                         </li>
-                        <li class="breadcrumb-item active">loại gà</li>
+                        <li class="breadcrumb-item active">Loại gà</li>
                     </ol>
                     <a href="index.php?act=add_lg">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
@@ -132,6 +132,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Price</th>
                                 <th>Image</th>
                                 <th>Actions</th>
                             </tr>
@@ -148,6 +149,7 @@
                                     <tr>
                                         <td><?= $id ?></td>
                                         <td><?= $name ?></td>
+                                        <td><?= $price ?></td>
                                         <td><img width="100px" src="../upload/<?= $image ?>" alt=""></td>
                                         <td>
                                             <a href="<?php echo $sualg ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">

@@ -82,12 +82,30 @@ extract($_SESSION['user_login']);
           </ul>
         </li>
         <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-wine-glass"></i><span class="hide-menu">Loại nước
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fab fa-gulp"></i><span class="hide-menu">Loại nước
               <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
             </span></a>
           <ul aria-expanded="false" class="collapse">
             <li><a href="index.php?act=list_nc">List loại nước</a></li>
             <li><a href="index.php?act=add_nc">Add loại nước</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-wine-glass"></i><span class="hide-menu">Loại mì
+              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
+            </span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="index.php?act=list_lm">List loại mì</a></li>
+            <li><a href="index.php?act=add_lm">Add loại mì</a></li>
+          </ul>
+        </li>
+        <li>
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-wine-glass"></i><span class="hide-menu">Loại khoai
+              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
+            </span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="index.php?act=list_lk">List loại khoai</a></li>
+            <li><a href="index.php?act=add_lk">Add loại khoai</a></li>
           </ul>
         </li>
       </ul>

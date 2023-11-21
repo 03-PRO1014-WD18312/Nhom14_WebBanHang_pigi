@@ -18,11 +18,11 @@ if ($loaiga_update) {
                     <div class="d-flex justify-content-end align-items-center">
                         <ol class="breadcrumb justify-content-end">
                             <li class="breadcrumb-item">
-                                <a href="javascript:void(0)">loại gà</a>
+                                <a href="javascript:void(0)">Loại gà</a>
                             </li>
                             <li class="breadcrumb-item active">Sửa loại gà</li>
                         </ol>
-                        <a href="index.php?act=list_dm">
+                        <a href="index.php?act=list_lg">
                             <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
                                 <i class="fas fa-clipboard-list"></i> Danh sách
                             </button>
@@ -131,8 +131,8 @@ if ($loaiga_update) {
                     <input type="hidden" name="id" value="<?= $id ?>">
                     <label for="txtTitle " class="form-label" id="lblTitle">Tên loại gà</label>
                     <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
-                    <label for="txtTitle " class="form-label" id="lblTitle">Nội dung</label>
-                    <input type="text" class="form-control" name="price" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Giá</label>
+                    <input type="text" class="form-control" name="price" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $price ?>">
                     <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
                     <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
                 </div>
