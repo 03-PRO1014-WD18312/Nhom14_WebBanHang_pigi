@@ -1,6 +1,6 @@
 <?php
-if ($loaiga_update) {
-    extract($loaiga_update);
+if ($loaikhoai_update) {
+    extract($loaikhoai_update);
 ?>
     <div class="page-wrapper">
         <!-- ============================================================== -->
@@ -12,17 +12,17 @@ if ($loaiga_update) {
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h4 class="text-themecolor">Sửa loại gà</h4>
+                    <h4 class="text-themecolor">Sửa loại khoai</h4>
                 </div>
                 <div class="col-md-7 align-self-center text-end">
                     <div class="d-flex justify-content-end align-items-center">
                         <ol class="breadcrumb justify-content-end">
                             <li class="breadcrumb-item">
-                                <a href="javascript:void(0)">Loại gà</a>
+                                <a href="javascript:void(0)">Loại khoai</a>
                             </li>
-                            <li class="breadcrumb-item active">Sửa loại gà</li>
+                            <li class="breadcrumb-item active">Sửa loại khoai</li>
                         </ol>
-                        <a href="index.php?act=list_lg">
+                        <a href="index.php?act=list_lk">
                             <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
                                 <i class="fas fa-clipboard-list"></i> Danh sách
                             </button>
@@ -126,19 +126,19 @@ if ($loaiga_update) {
             <!-- End Right sidebar -->
             <!-- ============================================================== -->
             <!-- Star content -->
-            <form action="index.php?act=update_lg" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
+            <form action="index.php?act=update_lk" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
                 <div class="form-group">
                     <input type="hidden" name="id" value="<?= $id ?>">
-                    <label for="txtTitle " class="form-label" id="lblTitle">Tên loại gà</label>
-                    <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $name ?>">
+                    <label for="txtTitle " class="form-label" id="lblTitle">Tên loại khoai</label>
+                    <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại khoai" style="margin-bottom: 10px;" value="<?= $name ?>">
                     <label for="txtTitle " class="form-label" id="lblTitle">Giá</label>
-                    <input type="text" class="form-control" required name="price" id="txtTitle" placeholder="Nhập tên loại gà" style="margin-bottom: 10px;" value="<?= $price ?>">
+                    <input type="text" class="form-control" name="price" id="txtTitle" placeholder="Nhập giá" style="margin-bottom: 10px;" value="<?= $price ?>">
                     <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
                     <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
                 </div>
                 <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
                 <input type="reset" class="btn btn-primary text-white" value="Reset">
-                <a href="index.php?act=list_dm"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
+                <a href="index.php?act=list_lk"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
             </form>
             <!-- End content -->
         </div>

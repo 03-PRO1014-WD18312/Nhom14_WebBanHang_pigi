@@ -8,17 +8,17 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h4 class="text-themecolor">Thêm loại nước</h4>
+                <h4 class="text-themecolor">Thêm loại khoai</h4>
             </div>
             <div class="col-md-7 align-self-center text-end">
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">Loại nước</a>
+                            <a href="javascript:void(0)">Loại khoai</a>
                         </li>
-                        <li class="breadcrumb-item active">Thêm loại nước</li>
+                        <li class="breadcrumb-item active">Thêm loại khoai</li>
                     </ol>
-                    <a href="index.php?act=list_nc">
+                    <a href="index.php?act=list_lk">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
                             <i class="fas fa-clipboard-list"></i> Danh sách
                         </button>
@@ -122,18 +122,22 @@
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
         <!-- Star content -->
-        <form action="index.php?act=add_nc" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
+        <form action="index.php?act=add_lk" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
             <div class="form-group">
-                <label for="txtTitle " class="form-label" id="lblTitle">Tên loại nước</label>
-                <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên loại nước" style="margin-bottom: 10px;">
+                <label for="txtTitle " class="form-label" id="lblTitle">Tên loại khoai</label>
+                <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại khoai" style="margin-bottom: 10px;">
+            </div>
+            <div class="form-group">
                 <label for="txtTitle " class="form-label" id="lblTitle">Giá</label>
-                <input type="number" class="form-control" required name="price" id="txtTitle" placeholder="Nhập giá" style="margin-bottom: 10px;">
-                <label for="txtTitle " class="form-label" id="lblTitle">Image</label>
+                <input type="text" class="form-control" name="price" id="txtTitle" placeholder="Nhập giá loại khoai" style="margin-bottom: 10px;">
+            </div>
+            <div class="form-group">
+                <label for="txtTitle " class="form-label" id="lblTitle">File hình ảnh loại khoai</label>
                 <input type="file" class="form-control" name="image" id="txtTitle" style="margin-bottom: 10px;">
             </div>
             <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
             <input type="reset" class="btn btn-primary text-white" value="Reset">
-            <a href="index.php?act=list_nc"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
+            <a href="index.php?act=list_lk"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
         </form>
         <!-- End content -->
     </div>
