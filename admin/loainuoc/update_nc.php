@@ -130,8 +130,8 @@ if ($loainuoc_update) {
                 <div class="form-group">
                     <input type="hidden" name="id" value="<?= $id ?>">
                     <label for="txtTitle " class="form-label" id="lblTitle">Tên loại nước</label>
-                    <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại nước" style="margin-bottom: 10px;" value="<?= $name ?>">
-                    <label for="txtTitle " class="form-label" id="lblTitle">Giá</label>
+                    <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên loại nước" style="margin-bottom: 10px;" value="<?= $name ?>">
+                    <label for="txtTitle " class="form-label" required id="lblTitle">Giá</label>
                     <input type="number" class="form-control" name="price" id="txtTitle" placeholder="Nhập giá" style="margin-bottom: 10px;" value="<?= $name ?>">
                     <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
                     <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
