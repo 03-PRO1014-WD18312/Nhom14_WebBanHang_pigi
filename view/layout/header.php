@@ -126,7 +126,7 @@
                 </div>
 
                 <div class="pickup-wrapper">
-                    <a class="action-login" href="#">Đăng nhập</a>
+                    <a class="action-login" href="index.php?act=login">Đăng nhập</a>
                 </div>
                 <div class="pickup-wrapper">
                     <a class="action-logup" href="#">Đăng ký</a>

@@ -11,11 +11,20 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_sanpham = loadAll_sanpham_home();
             include "view/thucdon.php";
             break;
+        case 'login':
+            include "view/login.php";
+            break;
+        case 'signup':
+            include "view/signup.php";
+            break;
+        case 'forgot':
+            include "view/forgot.php";
+            break;
         default:
             include "view/home.php";
             break;
     }
-}else{
+} else {
     include "view/home.php";
 }
 include "view/layout/footer.php";
