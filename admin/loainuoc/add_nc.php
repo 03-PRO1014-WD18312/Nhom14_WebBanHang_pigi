@@ -125,9 +125,9 @@
         <form action="index.php?act=add_nc" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
             <div class="form-group">
                 <label for="txtTitle " class="form-label" id="lblTitle">Tên loại nước</label>
-                <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại nước" style="margin-bottom: 10px;">
+                <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên loại nước" style="margin-bottom: 10px;">
                 <label for="txtTitle " class="form-label" id="lblTitle">Giá</label>
-                <input type="number" class="form-control" name="price" id="txtTitle" placeholder="Nhập giá" style="margin-bottom: 10px;">
+                <input type="number" class="form-control" required name="price" id="txtTitle" placeholder="Nhập giá" style="margin-bottom: 10px;">
                 <label for="txtTitle " class="form-label" id="lblTitle">Image</label>
                 <input type="file" class="form-control" name="image" id="txtTitle" style="margin-bottom: 10px;">
             </div>
