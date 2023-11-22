@@ -397,8 +397,11 @@ a {
 }
 
 .category_item-name {
-  color: #e31837;
+  color: #000;
   font-size: 1.2rem;
+}
+.category_item-name :hover {
+  color: #e31837;
 }
 
 /* List product */
@@ -469,6 +472,7 @@ a {
 }
 
 .product_item-btn {
+  cursor: pointer;
   width: 168px;
   height: 54px;
   line-height: 54px;

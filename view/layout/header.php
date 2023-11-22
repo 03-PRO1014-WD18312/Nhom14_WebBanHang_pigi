@@ -14,8 +14,8 @@
     <div class="page-wapper">
         <header class="page-header">
             <div class="logo-header">
-                <a class="logo" href="https://jollibee.com.vn/" title="Logo Jollibee" aria-label="store logo">
-                    <img src="https://jollibee.com.vn/static/version1699974795/frontend/Jollibee/default/vi_VN/images/logo.png" title="Logo Jollibee" alt="Logo Jollibee" width="100" height="100" />
+                <a class="logo" href="index.php" title="Logo Jollibee" aria-label="store logo">
+                    <img src="assets/view/image/logo_pigi.png" title="Logo Jollibee" alt="Logo Jollibee" width="100" height="100" />
                 </a>
             </div>
             <nav>

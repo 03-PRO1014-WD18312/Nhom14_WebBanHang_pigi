@@ -31,3 +31,8 @@ function loadAll_sanpham_home()
     $sql = "SELECT * FROM sanpham where 1 order by id desc limit 0,9";
     return pdo_query($sql);
 }
+function load_sanpham_cungloai($id, $id_danhmuc)
+{
+    $sql = "SELECT * FROM sanpham WHERE id <> '$id' and id_dm = '$id_danhmuc'";
+    return pdo_query($sql);
+}
