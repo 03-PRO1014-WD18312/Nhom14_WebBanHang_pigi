@@ -11,6 +11,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_sanpham = loadAll_sanpham_home();
             include "view/thucdon.php";
             break;
+
+        case 'login':
+            include "view/login.php";
+            break;
+        case 'signup':
+            include "view/signup.php";
+            break;
+        case 'forgot':
+            include "view/forgot.php";
+        break;
         case "danh_muc":
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
@@ -18,8 +28,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $list_sanpham = load_sanpham_cungloai("", $id);
                 include "view/dm_thucdon.php";
             } else {
-                $listsp = loadAll_sanpham("", 0);
-                include "view/danhmuc.php";
+               $list_dm = loadAll_danhmuc();
+               $list_sanpham = loadAll_sanpham_home();
+                include "view/thucdon.php";
             }
             break;
         default:

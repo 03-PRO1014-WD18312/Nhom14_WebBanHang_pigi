@@ -503,33 +503,117 @@ text-align:center;
 text-transform:uppercase;
 } */ 
 
-.sanpham{
-  display: flex;
-  justify-content: space-evenly;
+/* container */
+i{
+  cursor: pointer;
+ 
+}
+
+.container{
   max-width: 1002px;
   height: 555px;
   margin: 0px auto;
+  
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 2px dashed #ffc522 ;
+  padding-top:5px ;
+  margin-top: 30px; 
+  
+  
 }
-.sanpham img{
+.anh{
+  width: 45%;
+}
+.container img{
   width: 430px;
   height: 430px;
 }
-.content{
-  margin-top: 40px;
+.contentt{
+  width: 55%;
+  overflow:auto;
+  margin-left: 20px;
+  padding-right: 30px;
 }
-.boxsp i{
-  line-height: 50px;
+::-webkit-scrollbar {
+  width: 5px;
+  height: 2px;
 }
-.boxsp{
-  width: 490px;
-  height: 50px;
-  background-color:#ffc522 ;
-  margin-top: 5px;
+/* Thiết lập màu nền cho thanh cuộn */
+::-webkit-scrollbar-track {
+  background: rgb(210, 205, 205);
+  
+}
+/* Thiết lập màu cho nút trượt (thumb) */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 1px;
+}
+.box{
+ margin-top: 5px;
   border-radius: 5px;
+  background-color: #ffc522;
+  width: 450px;
+  height: 50px;
+  line-height: 50px;
   display: flex;
   justify-content: space-between;
-  line-height: 50px;
   padding: 0px 15px;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: 'Playpen Sans', cursive;
+  font-weight: bold;
+
+} 
+.box h3{
+  font-family: 'Playpen Sans', cursive;
   font-size: 16px;
+ 
+}
+.box_count{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0px;
+  font-size: 20px;
+  font-family: 'Playpen Sans', cursive;
   font-weight: bold;
 }
+.box_count p{
+  line-height: 45px;
+}
+.box_count_left{
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  align-items: center;
+}
+.box_1{
+  width: 45px;
+  height: 45px;
+  background-color: #d11633;
+  border-radius: 5px;
+ text-align: center;
+  color: #e8e8e8;
+}
+.box_center{
+  
+  width: 65px;
+  height: 45px;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+
+}
+.box_count_right{
+  font-size: 30px;
+  color: #d11633;
+  font-family: 'Playpen Sans', cursive;
+}
+
+
+
+
+
+
