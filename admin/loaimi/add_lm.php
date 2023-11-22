@@ -125,11 +125,11 @@
         <form action="index.php?act=add_lm" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
             <div class="form-group">
                 <label for="txtTitle " class="form-label" id="lblTitle">Tên loại mì</label>
-                <input type="text" class="form-control" name="name" id="txtTitle" placeholder="Nhập tên loại mì" style="margin-bottom: 10px;">
+                <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên loại mì" style="margin-bottom: 10px;">
             </div>
             <div class="form-group">
                 <label for="txtTitle " class="form-label" id="lblTitle">Giá</label>
-                <input type="text" class="form-control" name="price" id="txtTitle" placeholder="Nhập giá loại mì" style="margin-bottom: 10px;">
+                <input type="text" class="form-control" required name="price" id="txtTitle" placeholder="Nhập giá loại mì" style="margin-bottom: 10px;">
             </div>
             <div class="form-group">
                 <label for="txtTitle " class="form-label" id="lblTitle">File hình ảnh loại mì</label>
