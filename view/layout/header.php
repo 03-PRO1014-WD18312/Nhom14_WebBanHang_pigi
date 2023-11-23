@@ -124,12 +124,47 @@
                         </div>
                     </div>
                 </div>
+                <?php
+                if (isset($_SESSION['user'])) {
+                    extract($_SESSION['user']);
+                ?>
+                    <div class="box_user">
+                        <img src="upload/<?= $image != "" ? $image : "logo_user.jpg" ?>" alt="Ảnh user" class="box_user-img">
+                        <div class="box_user-name">Xin chào,<?= $hoten ?><i class="fa-solid fa-caret-down icon_dropdown"></i></div>
+                        <div class="box_user_dropdown">
+                            <ul class="box_user_dropdown_list">
+                                <li class="box_user_dropdown-item">
+                                    <a class="box_user_dropdown-item-link" href="#">Tài khoản của tôi</a>
+                                </li>
+                                <?php
+                                if ($id_role == 2) {
+                                    $_SESSION['user_login'] = $_SESSION['user'];
+                                ?>
+                                    <li class="box_user_dropdown-item">
+                                        <a class="box_user_dropdown-item-link" href="admin/index.php">Vào trang quản lý</a>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+                                <li class="box_user_dropdown-item">
+                                    <a class="box_user_dropdown-item-link" href="index.php?act=logout">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php
+                } else {
+                ?>
+                    <div class="pickup-wrapper">
+                        <a class="action-login" href="index.php?act=login">Đăng nhập</a>
+                    </div>
+                    <div class="pickup-wrapper">
+                        <a class="action-logup" href="index.php?act=signup">Đăng ký</a>
+                    </div>
+                <?php
+                }
+                ?>
 
-                <div class="pickup-wrapper">
-                    <a class="action-login" href="index.php?act=login">Đăng nhập</a>
-                </div>
-                <div class="pickup-wrapper">
-                    <a class="action-logup" href="#">Đăng ký</a>
-                </div>
+
             </div>
         </header>

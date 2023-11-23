@@ -10,7 +10,7 @@
                         <li class="category_item">
                             <img src="upload/<?= $image ?>" alt="" class="category_item-img" />
                             <br />
-                            <p class="category_item-name"><?= $name ?></p>
+                            <p class="category_item-name" <?= $id == $id_dm ? 'style="color: #e31837"' : "" ?>><?= $name ?></p>
                         </li>
                     </a>
             <?php
