@@ -18,6 +18,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_sanpham = loadAll_sanpham_home();
             include "view/thucdon.php";
             break;
+            case 'chitietsp':
+                include "view/chitietsanpham.php";
+                break;
         case 'logout':
             if (isset($_SESSION['user'])) {
                 unset($_SESSION['user']);
