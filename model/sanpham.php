@@ -18,7 +18,7 @@ function delete_sanpham($id)
 }
 function loadAll_sanpham()
 {
-    $sql = "SELECT * FROM sanpham";
+    $sql = "SELECT * FROM sanpham order by id desc";
     return pdo_query($sql);
 }
 function loadOne_sanpham($id)
