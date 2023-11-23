@@ -483,6 +483,26 @@ ALTER TABLE `tintuc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
+
+
+
+
+-- Dumping data for table `chitietsp`
+--
+
+INSERT INTO `sanpham` (`id`, `name`, `price`, `image`, `description`, `view`, `id_dm`, `id_ga`, `soluong_ga`, `id_nuoc`, `soluong_nuoc`, `id_mi`, `soluong_mi`, `id_khoai`, `soluong_khoai`) VALUES
+(11, '2 Miếng gà giòn + Khoai tây vừa + Nước ngọt lớn', 91000.00, '2_ga_gion_khoai_nc.png', '', 0, 10, 3, 2, 2, 1, 0, 0, 2, 1),
+(12, '01 MIẾNG GÀ GIÒN VUI VẺ + 1 MỲ Ý SỐT BÒ BẰM + 01 NƯỚC NGỌT LỚN', 78000.00, 'my_ga_nc.png', '', 0, 10, 3, 1, 2, 1, 1, 1, 0, 0),
+(13, 'MÌ Ý SỐT BÒ BẰM LỚN + 1 MIẾNG GÀ RÁN + NƯỚC NGỌT LỚN', 88000.00, 'my_lon_ga_nc.png', '', 0, 10, 3, 1, 2, 1, 2, 1, 0, 0),
+(14, 'COMBO CẶP ĐÔI ĂN Ý 145K (3 GÀ GIÒN VUI VẺ + 1 MỲ Ý SỐT BÒ BẰM + 1 KHOAI VỪA + 2 NƯỚC NGỌT)', 145000.00, '3ga_1my_500x500-05_1.jpg', '', 0, 10, 3, 3, 1, 2, 1, 1, 0, 0),
+(15, 'COMBO 185K (3 MIẾNG GÀ GIÒN + 2 MÌ Ý + 1 KHOAI VỪA + 3 NƯỚC NGỌT VỪA)', 185000.00, 'combo_180k.jpg', '', 0, 10, 3, 3, 1, 3, 1, 2, 0, 0),
+(16, 'TIỆC KIỂU MỚI, QUÀ CHUẨN GU 499K', 499000.00, '499k.jpg', '', 0, 10, 3, 3, 1, 5, 1, 5, 1, 2),
+(17, 'MIẾNG GÀ GIÒN VUI VẺ', 33000.00, '1_mi_ng_ggvv_png_1.png', '', 0, 11, 3, 1, 0, 0, 0, 0, 0, 0),
+(18, 'CƠM GÀ GIÒN (1 MIẾNG GÀ GIÒN, CƠM VÀ XÀ LÁCH)', 43000.00, '6d2e290195e851-cmggin_1_2.png', '', 0, 10, 1, 0, 0, 0, 0, 0, 0, 0),
+(19, 'C2 - CƠM GÀ GIÒN + SÚP BÍ ĐỎ + NƯỚC NGỌT LỚN', 63000.00, 'com_ga_sup_nc_1.png', '', 0, 11, 3, 1, 2, 1, 0, 0, 0, 0),
+(20, '2 MIẾNG GÀ GIÒN', 66000.00, 'd1834d87116836-2mingggin_1.png', '', 0, 11, 3, 2, 0, 0, 0, 0, 0, 0);
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
