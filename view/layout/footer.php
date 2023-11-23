@@ -1,3 +1,6 @@
+</div>
+</body>
+<script src="soluong.js"></script>
 <footer class="page-footer">
     <div class="footer content">
         <div class="footer-text-container">
@@ -80,7 +83,5 @@
         <span>© 2020 Pigi Viet Nam</span>
     </small>
 </footer>
-</div>
-</body>
 
 </html>
