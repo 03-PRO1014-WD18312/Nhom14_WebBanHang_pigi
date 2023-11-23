@@ -739,6 +739,7 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                             unset($_SESSION['error_cfp']);
                         }
                         insert_taikhoan($user, $pass, $hoten, "", $email, "", "", $id_role);
+                        
                     } else {
                         $mess = "Vui lòng nhập lại đúng mật khẩu";
                         $_SESSION['error_cfp'] = $mess;
