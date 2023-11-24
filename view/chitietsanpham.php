@@ -83,7 +83,7 @@
             <h4 style="text-align: center; width: 250px; font-weight: bold;margin: 10px auto; font-size: 16px; font-family: 'Playpen Sans', cursive; ">TIỆC KIỂU MỚI, QUÀ CHUẨN GU 599K</h4>
         </div> 
  
-      <!-- <div class="select-container">
+      <div class="select-container">
             <select class="select-box">
                 <option value="chọn gà 1">Chọn gà 1</option>
                 <option value="chọn gà 2">Chọn gà 2</option>
@@ -133,8 +133,14 @@
             </select>
             <div class="icon-container">
                 <i class="fa fa-caret-down icon"></i>
-            </div>
-            </div>  -->
+            </div> 
+        </div>
+        <!-- <div class="box" style="margin-bottom: 50px; background: #E31837;">
+            <h3 style="margin: 0px auto; color: #ffffff; font-size: 14px; ">đặt hàng</h3>
+            
+        </div> -->
+        <div class="product_item-btn" href="#">Đặt hàng</div>
+        </div>
 
 
  
@@ -149,41 +155,7 @@
                 <div class="dropdown-list_item">chọn gà 3</div>
             </div> -->
         
-            <div class="select_box" class="active">
-        <div class="select_option" >
-          <input type="text" placeholder="Select" id="soValue" class="textBox" readonly name="">
-        </div>
-        <div class="content">
-        
-          <ul class="options">
-            <li onclick="show('HTML')">HTML</li>
-            <li onclick="show('CSS')">CSS</li>
-            <li onclick="show('Java')">Java</li>
-            <li onclick="show('html')">C#</li>
-            <li onclick="show('Pution')">Pution</li>
-            <li onclick="show('sdfsdf')">sdfsdf</li>
-            <li onclick="show('html')">C#</li>
-            <li onclick="show('htPutionml')">Pution</li>
-            <li onclick="show('html')">sdfsdf</li>
-            <li onclick="show('html')">C#</li>
-            <li onclick="show('html')">Pution</li>
-            <li onclick="show('html')">sdfsdf</li>
-            <li onclick="show('html')">C#</li>
-            <li onclick="show('html')">Pution</li>
-            <li onclick="show('html')">sdfsdf</li>
-          </ul>
-        </div>
-    </div>
-    <script>
-      function show(anything){
-        document.querySelector ('.textBox').value = anything;
-      }
-      let select_box = document.querySelector('.select_box');
-      select_box.onclick =function(){
-        select_box.classList.toggle('active');
-      }
-    </script>
-</div>
+            
 
     <div class="box_product">
         <ul class="list_product">
