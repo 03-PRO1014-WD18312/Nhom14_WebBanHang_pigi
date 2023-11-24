@@ -1085,35 +1085,31 @@ a {
 /* end css login */
 
 /* start css chitietsp */
-i{
+i {
   cursor: pointer;
- 
 }
 
-.containers{
-
+.containers {
   max-width: 1002px;
   height: 555px;
   margin: 0px auto;
-  
+
   display: flex;
   justify-content: space-evenly;
-  border-top: 2px dashed #ffc522 ;
-  padding-top:5px ;
-  margin-top: 30px; 
-  
-  
+  border-top: 2px dashed #ffc522;
+  padding-top: 5px;
+  margin-top: 30px;
 }
-.anh{
+.anh {
   width: 45%;
 }
-.containers img{
+.containers img {
   width: 430px;
   height: 430px;
 }
-.contentt{
+.contentt {
   width: 55%;
-  overflow:auto;
+  overflow: auto;
   margin-left: 20px;
   padding-right: 30px;
 }
@@ -1131,8 +1127,8 @@ i{
   background: red;
   border-radius: 1px;
 } */
-.box{
- margin-top: 5px;
+.box {
+  margin-top: 5px;
   border-radius: 5px;
   background-color: #ffc522;
   width: 450px;
@@ -1144,70 +1140,59 @@ i{
   align-items: center;
   text-transform: uppercase;
   font-size: 15px;
-  font-family: 'Playpen Sans', cursive;
+  font-family: "Playpen Sans", cursive;
   font-weight: bold;
-
-} 
-.box h3{
-  font-family: 'Playpen Sans', cursive;
-  font-size: 16px;
- 
 }
-.box_count{
+.box h3 {
+  font-family: "Playpen Sans", cursive;
+  font-size: 16px;
+}
+.box_count {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 40px 0px;
   font-size: 20px;
-  font-family: 'Playpen Sans', cursive;
+  font-family: "Playpen Sans", cursive;
   font-weight: bold;
 }
-.box_count p{
+.box_count p {
   line-height: 45px;
 }
-.box_count_left{
+.box_count_left {
   display: flex;
   width: 180px;
   justify-content: space-between;
   align-items: center;
 }
-.box_1{
+.box_1 {
   width: 45px;
   height: 45px;
   background-color: #d11633;
   border-radius: 5px;
- text-align: center;
+  text-align: center;
   color: #e8e8e8;
 }
-.box_center{
-  
+.box_center {
   width: 65px;
   height: 45px;
   border: 1px solid black;
   border-radius: 5px;
   text-align: center;
-
 }
-.box_count_right{
+.box_count_right {
   font-size: 30px;
   color: #d11633;
-  font-family: 'Playpen Sans', cursive;
+  font-family: "Playpen Sans", cursive;
 }
 /* start css chitietsp */
 
-
-
-
-
-
 /*select option*/
 
-
- 
-body{
+/* body{
   padding: 60px 100px 0px 100px;
-}
-.select-container{
+} */
+.select-container {
   /* display: flex; */
   justify-content: center;
   position: relative;
@@ -1216,7 +1201,7 @@ body{
   margin-bottom: 80px;
   width: 300px;
 }
-.select-box{
+.select-box {
   border: none;
   appearance: none;
   padding: 0 30px 0 15px;
@@ -1224,10 +1209,9 @@ body{
   color: white;
   background-color: #ffc522;
   font-size: 20px;
-
 }
-.select-container  .icon-container{
-  width: 50px ;
+.select-container .icon-container {
+  width: 50px;
   height: 100%;
   position: absolute;
   right: 0;
@@ -1236,11 +1220,7 @@ body{
   justify-content: center;
   background-color: #e6be4f;
 }
-.icon-container i{
+.icon-container i {
   font-size: 30px;
   color: black;
 }
-
-
-
- 
