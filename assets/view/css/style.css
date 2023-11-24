@@ -1100,9 +1100,11 @@ i {
   padding-top: 5px;
   margin-top: 30px;
 }
+
 .anh {
   width: 45%;
 }
+
 .containers img {
   width: 430px;
   height: 430px;
@@ -1113,10 +1115,12 @@ i {
   margin-left: 20px;
   padding-right: 30px;
 }
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 2px;
 }
+
 /* Thiết lập màu nền cho thanh cuộn */
 /* ::-webkit-scrollbar-track {
   background: rgb(210, 205, 205);
@@ -1159,6 +1163,10 @@ i {
 .box_count p {
   line-height: 45px;
 }
+
+.box_count p {
+  line-height: 45px;
+}
 .box_count_left {
   display: flex;
   width: 180px;
@@ -1185,13 +1193,11 @@ i {
   color: #d11633;
   font-family: "Playpen Sans", cursive;
 }
+
 /* start css chitietsp */
 
 /*select option*/
 
-/* body{
-  padding: 60px 100px 0px 100px;
-} */
 .select-container {
   /* display: flex; */
   justify-content: center;
@@ -1224,3 +1230,130 @@ i {
   font-size: 30px;
   color: black;
 }
+/* css giohang */
+.box_cart {
+  margin: 20px 0;
+  background-color: #fff;
+  width: 100%;
+  background-color: #fff;
+}
+
+.box_cart_item {
+  display: flex;
+  width: 70%;
+  margin: auto;
+  /* background-color: #000; */
+  border-top: 2px dashed #ffc522;
+  border-bottom: 2px dashed #ffc522;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box_cart_item-box1 {
+  display: flex;
+  padding-left: 10px;
+}
+
+.box_cart_item-box1 img {
+  width: 99px;
+  height: 99px;
+  padding: 15px 0;
+  vertical-align: top;
+}
+
+.box_cart_item-content {
+  padding: 15px 10px;
+}
+
+.box_cart_item-title {
+  max-width: 400px;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.box_cart_item-description {
+  max-width: 300px;
+  text-align: left;
+}
+
+.box_cart_item-box3 {
+  height: 40px;
+}
+
+.box_cart_item-btn {
+  padding: 9px 12px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #e31837;
+  border-radius: 8px;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.box_cart_item-btn-count {
+  padding: 8px 16px 10px 16px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #e31837;
+  border-radius: 8px;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+  --webkit-user-select: none;
+  user-select: none;
+}
+
+.box_cart_item-input {
+  max-width: 74px;
+  height: 39px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.box_cart_item-input::-webkit-outer-spin-button,
+.box_cart_item-input::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.box_cart_item-price {
+  color: #e31837;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.box_cart_item-box3 .action {
+  border-radius: 50%;
+}
+
+.box_sumprice {
+  width: 70%;
+  margin: auto;
+  text-align: right;
+}
+
+.box_sumprice-title {
+  color: #e31837;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px 10px;
+}
+
+.box_sumprice-btn {
+  width: 160px;
+  height: 52px;
+  background-color: #e31837;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 10px;
+  cursor: pointer;
+}
+
+/* end css giohang */
