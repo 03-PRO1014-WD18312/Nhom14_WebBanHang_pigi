@@ -4,6 +4,11 @@ include "model/pdo.php";
 include "model/danhmuc.php";
 include "model/sanpham.php";
 include "model/taikhoan.php";
+include "model/giohang.php";
+include "model/loaiga.php";
+include "model/loainuoc.php";
+include "model/loaimi.php";
+include "model/loaikhoai.php";
 include "view/layout/header.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -75,7 +80,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     <script>
                         window.location.href = 'index.php';
                     </script>
-<?php
+                <?php
                 } else {
                     $mess = "Vui lòng nhập lại đúng mật khẩu";
                     $_SESSION['error_cfp'] = $mess;
@@ -142,6 +147,38 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/thucdon.php";
             }
             break;
+        case "giohang":
+            if (isset($_SESSION['user'])) {
+                extract($_SESSION['user']);
+                $list_giohang = loadAll_giohang_vsID($id);
+                $list_loaiga = loadAll_loaiga();
+                $list_loainc = loadAll_loainuoc();
+                $list_loaimi = loadAll_loaimi();
+                $list_loaikhoai = loadAll_loaikhoai();
+                $tongPrice = 0;
+            }
+            include "view/giohang.php";
+            break;
+        case "delete_giohang":
+            if (isset($_SESSION['user'])) {
+                extract($_SESSION['user']);
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    delete_giohang($id);
+                }
+                $list_giohang = loadAll_giohang_vsID($id);
+                $list_loaiga = loadAll_loaiga();
+                $list_loainc = loadAll_loainuoc();
+                $list_loaimi = loadAll_loaimi();
+                $list_loaikhoai = loadAll_loaikhoai();
+                ?>
+                <script>
+                    document.window.location = "index.php?act=giohang";
+                </script>
+<?php
+            }
+            break;
+        
         default:
             include "view/home.php";
             break;
