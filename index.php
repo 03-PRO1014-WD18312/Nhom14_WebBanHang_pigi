@@ -156,7 +156,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $list_loaimi = loadAll_loaimi();
                 $list_loaikhoai = loadAll_loaikhoai();
                 $tongPrice = 0;
+                foreach ($list_giohang as $giohang) {
+                    extract($giohang);
+                    $tongPrice += ($last_price * $so_luong);
+                }
             }
+
             include "view/giohang.php";
             break;
         case "delete_giohang":

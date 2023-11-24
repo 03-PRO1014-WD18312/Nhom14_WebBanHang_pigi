@@ -8,7 +8,6 @@
                 <?php
                 foreach ($list_giohang as $giohang) {
                     extract($giohang);
-                    $tongPrice += $last_price;
                 ?>
                     <li class="box_cart_item">
                         <input type="hidden" name="idUser" value="<?= $id_user ?>">
@@ -54,13 +53,15 @@
                                         }
                                         echo $soluong_khoai . " x " . $name_khoai . " + " . $price_khoai . "đ <br>";
                                     }
+
                                     ?>
+                                <h4 style="text-align: left;"><?= "Số lượng: " . $so_luong ?></h4>
                             </div>
                         </div>
                         <div class="box_cart_item-box3">
-                            <span class="box_cart_item-btn-count" onclick="plusDivs(-1,<?= $id ?>)">-</span>
+                            <!-- <span class="box_cart_item-btn-count" onclick="plusDivs(-1,<?= $id ?>)">-</span>
                             <input type="number" value="1" name="so_luong" class="box_cart_item-input" id="<?= $id ?>">
-                            <span class="box_cart_item-btn-count" onclick="plusDivs(+1,<?= $id ?>)">+</span>
+                            <span class="box_cart_item-btn-count" onclick="plusDivs(+1,<?= $id ?>)">+</span> -->
                             <span class="box_cart_item-price" id="priceId=<?= $id ?>"><?= $last_price ?></span><span class="box_cart_item-price">đ</span>
                             <a href="index.php?act=update_giohang&id=<?= $id ?>" class="box_cart_item-btn action"><i class="fa-solid fa-pen"></i></a>
                             <a href="index.php?act=delete_giohang&id=<?= $id ?>" class="box_cart_item-btn action"><i class="fa-regular fa-trash-can"></i></a>
