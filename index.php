@@ -18,9 +18,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_sanpham = loadAll_sanpham_home();
             include "view/thucdon.php";
             break;
-            case 'chitietsp':
-                include "view/chitietsanpham.php";
-                break;
+        case 'chitietsp':
+            include "view/chitietsanpham.php";
+            break;
         case 'logout':
             if (isset($_SESSION['user'])) {
                 unset($_SESSION['user']);
@@ -156,7 +156,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $list_loaimi = loadAll_loaimi();
                 $list_loaikhoai = loadAll_loaikhoai();
                 $tongPrice = 0;
+                foreach ($list_giohang as $giohang) {
+                    extract($giohang);
+                    $tongPrice += ($last_price * $so_luong);
+                }
             }
+
             include "view/giohang.php";
             break;
         case "delete_giohang":
@@ -178,7 +183,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 <?php
             }
             break;
-        
+
         default:
             include "view/home.php";
             break;
