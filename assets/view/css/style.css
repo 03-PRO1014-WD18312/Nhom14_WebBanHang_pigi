@@ -1087,11 +1087,9 @@ a {
 /* start css chitietsp */
 i {
   cursor: pointer;
-
 }
 
 .containers {
-
   max-width: 1002px;
   height: 555px;
   margin: 0px auto;
@@ -1101,8 +1099,6 @@ i {
   border-top: 2px dashed #ffc522;
   padding-top: 5px;
   margin-top: 30px;
-
-
 }
 
 .anh {
@@ -1113,7 +1109,6 @@ i {
   width: 430px;
   height: 430px;
 }
-
 .contentt {
   width: 55%;
   overflow: auto;
@@ -1149,38 +1144,35 @@ i {
   align-items: center;
   text-transform: uppercase;
   font-size: 15px;
-  font-family: 'Playpen Sans', cursive;
+  font-family: "Playpen Sans", cursive;
   font-weight: bold;
-
 }
-
 .box h3 {
-  font-family: 'Playpen Sans', cursive;
+  font-family: "Playpen Sans", cursive;
   font-size: 16px;
-
 }
-
 .box_count {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 40px 0px;
   font-size: 20px;
-  font-family: 'Playpen Sans', cursive;
+  font-family: "Playpen Sans", cursive;
   font-weight: bold;
+}
+.box_count p {
+  line-height: 45px;
 }
 
 .box_count p {
   line-height: 45px;
 }
-
 .box_count_left {
   display: flex;
   width: 180px;
   justify-content: space-between;
   align-items: center;
 }
-
 .box_1 {
   width: 45px;
   height: 45px;
@@ -1189,38 +1181,29 @@ i {
   text-align: center;
   color: #e8e8e8;
 }
-
 .box_center {
-
   width: 65px;
   height: 45px;
   border: 1px solid black;
   border-radius: 5px;
   text-align: center;
-
 }
-
 .box_count_right {
   font-size: 30px;
   color: #d11633;
-  font-family: 'Playpen Sans', cursive;
+  font-family: "Playpen Sans", cursive;
 }
 
 /* start css chitietsp */
 
-
-
-
-
-
 /*select option*/
+
 
 
 
 /* body {
   padding: 60px 100px 0px 100px;
 } */
-
 .select-container {
   /* display: flex; */
   justify-content: center;
@@ -1230,7 +1213,6 @@ i {
   margin-bottom: 80px;
   width: 300px;
 }
-
 .select-box {
   border: none;
   appearance: none;
@@ -1239,9 +1221,7 @@ i {
   color: white;
   background-color: #ffc522;
   font-size: 20px;
-
 }
-
 .select-container .icon-container {
   width: 50px;
   height: 100%;
@@ -1252,12 +1232,10 @@ i {
   justify-content: center;
   background-color: #e6be4f;
 }
-
 .icon-container i {
   font-size: 30px;
   color: black;
 }
-
 /* css giohang */
 .box_cart {
   margin: 20px 0;
@@ -1306,7 +1284,6 @@ i {
 
 .box_cart_item-box3 {
   height: 40px;
-
 }
 
 .box_cart_item-btn {
@@ -1338,7 +1315,7 @@ i {
   height: 39px;
   border: 1px solid #000;
   border-radius: 6px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: bold;
   font-size: 1.5rem;
   text-align: center;
