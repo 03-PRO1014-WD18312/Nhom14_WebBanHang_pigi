@@ -487,10 +487,34 @@ COMMIT;
 
 
 
+
+
+-- Table structure for table `chitietsp`
+--
+DROP TABLE IF EXISTS `chitietsp`;
+CREATE TABLE `chitietsp` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `price` double(10,2) NOT NULL,
+  `image` varchar(500) NOT NULL,
+  `description` text NOT NULL,
+  `view` int(11) DEFAULT 0,
+  `id_dm` int(11) NOT NULL,
+  `id_ga` int(11) NOT NULL,
+  `soluong_ga` int(11) DEFAULT NULL,
+  `id_nuoc` int(11) NOT NULL,
+  `soluong_nuoc` int(11) DEFAULT NULL,
+  `id_mi` int(11) NOT NULL,
+  `soluong_mi` int(11) DEFAULT NULL,
+  `id_khoai` int(11) NOT NULL,
+  `soluong_khoai` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 -- Dumping data for table `chitietsp`
 --
 
-INSERT INTO `sanpham` (`id`, `name`, `price`, `image`, `description`, `view`, `id_dm`, `id_ga`, `soluong_ga`, `id_nuoc`, `soluong_nuoc`, `id_mi`, `soluong_mi`, `id_khoai`, `soluong_khoai`) VALUES
+INSERT INTO `chitietsp` (`id`, `name`, `price`, `image`, `description`, `view`, `id_dm`, `id_ga`, `soluong_ga`, `id_nuoc`, `soluong_nuoc`, `id_mi`, `soluong_mi`, `id_khoai`, `soluong_khoai`) VALUES
 (11, '2 Miếng gà giòn + Khoai tây vừa + Nước ngọt lớn', 91000.00, '2_ga_gion_khoai_nc.png', '', 0, 10, 3, 2, 2, 1, 0, 0, 2, 1),
 (12, '01 MIẾNG GÀ GIÒN VUI VẺ + 1 MỲ Ý SỐT BÒ BẰM + 01 NƯỚC NGỌT LỚN', 78000.00, 'my_ga_nc.png', '', 0, 10, 3, 1, 2, 1, 1, 1, 0, 0),
 (13, 'MÌ Ý SỐT BÒ BẰM LỚN + 1 MIẾNG GÀ RÁN + NƯỚC NGỌT LỚN', 88000.00, 'my_lon_ga_nc.png', '', 0, 10, 3, 1, 2, 1, 2, 1, 0, 0),
@@ -501,6 +525,23 @@ INSERT INTO `sanpham` (`id`, `name`, `price`, `image`, `description`, `view`, `i
 (18, 'CƠM GÀ GIÒN (1 MIẾNG GÀ GIÒN, CƠM VÀ XÀ LÁCH)', 43000.00, '6d2e290195e851-cmggin_1_2.png', '', 0, 10, 1, 0, 0, 0, 0, 0, 0, 0),
 (19, 'C2 - CƠM GÀ GIÒN + SÚP BÍ ĐỎ + NƯỚC NGỌT LỚN', 63000.00, 'com_ga_sup_nc_1.png', '', 0, 11, 3, 1, 2, 1, 0, 0, 0, 0),
 (20, '2 MIẾNG GÀ GIÒN', 66000.00, 'd1834d87116836-2mingggin_1.png', '', 0, 11, 3, 2, 0, 0, 0, 0, 0, 0);
+
+
+-- Indexes for table `chitietsp`
+--
+ALTER TABLE `chitietsp`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_dm` (`id_dm`,`id_ga`,`id_nuoc`,`id_mi`,`id_khoai`),
+  ADD KEY `id_ga` (`id_ga`),
+  ADD KEY `id_khoai` (`id_khoai`),
+  ADD KEY `id_mi` (`id_mi`),
+  ADD KEY `id_nuoc` (`id_nuoc`);
+
+  -- AUTO_INCREMENT for table `chitietsp`
+--
+ALTER TABLE `chitietsp`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
