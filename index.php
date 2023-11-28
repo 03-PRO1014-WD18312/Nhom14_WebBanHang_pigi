@@ -81,15 +81,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     }
                     $last_price = ($price * $soluong) + $price_ga + $price_mi + $price_nuoc + $price_khoai;
                     insert_giohang($id_user,$id_pro, $id_ga, $id_nuoc, $id_mi,$id_khoai,$soluong,$last_price);
+                    ?>
+                    <script>
+                        window.location = "index.php?act=giohang&id=<?= $_SESSION['user']['id'] ?>"
+                    </script>
+                    <?php
                     }else{
                         echo "Chua dang nhap";
                     }
-                  
-
-                   
-                   
-                    
-
                 }
             }
             include "view/chitietsanpham.php";
