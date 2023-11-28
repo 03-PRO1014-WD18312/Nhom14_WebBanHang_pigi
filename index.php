@@ -9,6 +9,7 @@ include "model/loaiga.php";
 include "model/loainuoc.php";
 include "model/loaimi.php";
 include "model/loaikhoai.php";
+include "model/thanhtoan.php";
 include "view/layout/header.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -234,7 +235,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $tongPrice += ($last_price * $so_luong);
                 }
             }
-
             include "view/giohang.php";
             break;
         case "delete_giohang":
@@ -255,6 +255,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 </script>
 <?php
             }
+            break;
+        case "thanhtoan":
+            if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                $id_user = $_SESSION['user']['id'];
+                $hoTen = $_POST['hoTen'];
+                $tel = $_POST['tel'];   
+                $address = $_POST['address'];
+                $id_pay = $_POST['id_pay'];
+                $status = 1;
+                insert_thanhtoan($id_user, $hoTen, $tel,  $address, $id_pay, $status);
+            }
+            include "view/thanhtoan.php";
             break;
 
         default:

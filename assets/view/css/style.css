@@ -1189,11 +1189,6 @@ i{
   text-align: center;
   color: #e8e8e8;
 }
-/* end css chitietsp */
-
-
-
-
 /* css giohang */
 .box_cart {
   margin: 20px 0;
@@ -1321,3 +1316,109 @@ i{
 }
 
 /* end css giohang */
+/* Start css thanhtoan */
+.box_thanhtoan {
+  background-color: #fff;
+}
+.box_form {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+}
+.box_thongtin {
+  width: 60%;
+  display: grid;
+  text-align: left;
+  padding: 10px 10px;
+}
+.box_thongtin_title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.box_thongtin-input {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 10px 0 10px 20px;
+}
+.box_thongtin-label {
+  padding-left: 20px;
+  max-height: 40px;
+  line-height: 40px;
+}
+.box_2 {
+  width: 40%;
+  background-color: #f5f1e6;
+}
+.box_2_title {
+  display: flex;
+  padding: 10px 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px dashed #ffc522;
+}
+.box_2_title h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.box_2_title i {
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 2px;
+  color: #000;
+}
+.box_2_title i:hover {
+  color: #e31837;
+}
+.box_ctdh {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px dashed #ffc522;
+}
+.box_ctdh_img {
+  width: 20%;
+  padding: 10px 10px;
+}
+.box_ctdh_img img {
+  width: 100%;
+}
+.box_ctdh_title {
+  padding: 10px 10px;
+}
+.box_ctdh_title-name {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+}
+.box_ctdh_content {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.box_ctdh_content-soluong {
+}
+.box_ctdh_content-price {
+}
+.box_ctdh_footer {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.box_ctdh_footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e31837;
+  padding: 10px 10px;
+}
+.box_ctdh_footer-content {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e31837;
+  padding: 10px 10px;
+}
+.box_ctdh_footer p {
+  margin-bottom: 0;
+}
+/* End css thanh toán */
