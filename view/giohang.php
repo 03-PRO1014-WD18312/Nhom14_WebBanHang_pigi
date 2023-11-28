@@ -2,7 +2,7 @@
     <?php
     if (isset($list_giohang) && ($list_giohang != "")) {
     ?>
-        <form action="index.php?act=giohang" method="post" class="box_cart">
+        <form action="index.php?act=thanhtoan" method="post" class="box_cart">
             <h1 class="box_login_title">GIỎ HÀNG</h1>
             <ul class="box_cart_list">
                 <?php
@@ -70,10 +70,9 @@
                 <?php
                 }
                 ?>
-
                 <div class="box_sumprice">
                     <h1 class="box_sumprice-title">Tổng Cộng: <span class="box_sumprice-price" id="sumPrice"><?php echo $tongPrice ?></span>đ</h1>
-                    <input class="box_sumprice-btn" type="submit" name="btn_submit" value="THANH TOÁN">
+                    <input class="box_sumprice-btn" type="submit" name="" value="THANH TOÁN">
                 </div>
             </ul>
 
