@@ -20,8 +20,80 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "view/thucdon.php";
             break;
         case 'chitietsp':
+            if(isset($_GET['id']) && ($_GET['id'])){
+                $id = $_GET['id'];
+                $sanpham = loadOne_sanpham($id);
+                $list_ga =loadAll_loaiga();
+                $list_mi =loadAll_loaimi();
+                $list_nuoc =loadAll_loainuoc();
+                $list_khoai =loadAll_loaikhoai();
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    
+                    if (isset($_SESSION['user']) && ($_SESSION['user'])) {
+                         $id_user = $_POST['id_user'];
+                         $id_pro = $_POST['id'];
+                         $soluong = $_POST['soluong'];
+                         $price = $_POST['price'];
+                    if (isset($_POST['id_ga']) && ($_POST['id_ga'])) {
+                        $id_ga = $_POST['id_ga'];
+                        foreach($list_ga as $loai_ga){
+                           if( $id_ga == $loai_ga['id']){
+                            $price_ga = $loai_ga['price'];
+                           }
+                        }
+                    }else{
+                        $id_ga=0;
+                        $price_ga = 0;
+                    }
+
+                    if (isset($_POST['id_mi']) && ($_POST['id_mi'])) {
+                        $id_mi = $_POST['id_mi'];
+                        foreach($list_mi as $loai_mi){
+                            if( $id_mi == $loai_mi['id']){
+                             $price_mi = $loai_mi['price'];
+                            }
+                         }
+                    }else{
+                        $id_mi=0;
+                        $price_mi = 0;
+                    }
+                    if (isset($_POST['id_nuoc']) && ($_POST['id_nuoc'])) {
+                        $id_nuoc = $_POST['id_nuoc'];
+                        foreach($list_nuoc as $loai_nc){
+                            if( $id_nuoc == $loai_nc['id']){
+                             $price_nuoc = $loai_nc['price'];
+                            }
+                         }
+                    }else{
+                        $id_nuoc=0;
+                        $price_nuoc = 0;
+                    }
+                    if (isset($_POST['id_khoai']) && ($_POST['id_khoai'])) {
+                        $id_khoai = $_POST['id_khoai'];
+                        foreach($list_khoai as $loai_khoai){
+                            if( $id_khoai == $loai_khoai['id']){
+                             $price_khoai = $loai_khoai['price'];
+                            }
+                         }
+                    }else{
+                        $id_khoai=0;
+                        $price_khoai = 0;
+                    }
+                    $last_price = ($price * $soluong) + $price_ga + $price_mi + $price_nuoc + $price_khoai;
+                    insert_giohang($id_user,$id_pro, $id_ga, $id_nuoc, $id_mi,$id_khoai,$soluong,$last_price);
+                    ?>
+                    <script>
+                        window.location = "index.php?act=giohang&id=<?= $_SESSION['user']['id'] ?>"
+                    </script>
+                    <?php
+                    }else{
+                        echo "Chua dang nhap";
+                    }
+                }
+            }
             include "view/chitietsanpham.php";
             break;
+            
         case 'logout':
             if (isset($_SESSION['user'])) {
                 unset($_SESSION['user']);
