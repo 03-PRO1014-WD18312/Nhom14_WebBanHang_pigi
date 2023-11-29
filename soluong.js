@@ -23,3 +23,19 @@
 //     }
 //     y.innerHTML = sumPrice;
 // }
+function soLuong(n) {
+    var x = document.getElementById("soluong");
+    var y = document.getElementById("sumPrice");
+    var z = document.getElementById("price");
+    var price = new Number(z.value)
+    var sumPrice = new Number(y.innerHTML)
+    var soluong = new Number(x.value);
+    soluong += n;
+    if (soluong < 1) {
+        soluong = 1;
+    }
+    sumPrice = price * soluong;
+    x.value = soluong;
+    y.innerHTML = sumPrice;
+
+}
