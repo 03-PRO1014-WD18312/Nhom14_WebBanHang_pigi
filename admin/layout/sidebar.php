@@ -52,6 +52,30 @@ extract($_SESSION['user_login']);
           <ul aria-expanded="false" class="collapse">
             <li><a href="index.php?act=list_sp">List sản phẩm</a></li>
             <li><a href="index.php?act=add_sp">Add sản phẩm</a></li>
+            <li> <a class="has-arrow active" href="javascript:void(0)" aria-expanded="false">Quản lý loại gà</a>
+              <ul aria-expanded="false" class="collapse in">
+                <li><a href="index.php?act=list_lg">List loại gà</a></li>
+                <li><a href="index.php?act=add_lg">Add loại gà</a></li>
+              </ul>
+            </li>
+            <li> <a class="has-arrow active" href="javascript:void(0)" aria-expanded="false">Quản lý loại nước</a>
+              <ul aria-expanded="false" class="collapse in">
+                <li><a href="index.php?act=list_nc">List loại nước</a></li>
+                <li><a href="index.php?act=add_nc">Add loại nước</a></li>
+              </ul>
+            </li>
+            <li> <a class="has-arrow active" href="javascript:void(0)" aria-expanded="false">Quản lý loại mì</a>
+              <ul aria-expanded="false" class="collapse in">
+                <li><a href="index.php?act=list_lm">List loại mì</a></li>
+                <li><a href="index.php?act=add_lm">Add loại mì</a></li>
+              </ul>
+            </li>
+            <li> <a class="has-arrow active" href="javascript:void(0)" aria-expanded="false">Quản lý loại khoai</a>
+              <ul aria-expanded="false" class="collapse in">
+                <li><a href="index.php?act=list_lk">List loại khoai</a></li>
+                <li><a href="index.php?act=add_lk">Add loại khoai</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>
@@ -64,48 +88,20 @@ extract($_SESSION['user_login']);
           </ul>
         </li>
         <li>
+          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-shopping-basket"></i><span class="hide-menu">Đơn hàng
+              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
+            </span></a>
+          <ul aria-expanded="false" class="collapse">
+            <li><a href="index.php?act=list_donhang">List đơn hàng</a></li>
+          </ul>
+        </li>
+        <li>
           <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-truck"></i><span class="hide-menu">Dịch vụ
               <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
             </span></a>
           <ul aria-expanded="false" class="collapse">
             <li><a href="index.php?act=list_dv">List dịch vụ</a></li>
             <li><a href="index.php?act=add_dv">Add dịch vụ</a></li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-utensil-spoon"></i><span class="hide-menu">Loại gà
-              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
-            </span></a>
-          <ul aria-expanded="false" class="collapse">
-            <li><a href="index.php?act=list_lg">List loại gà</a></li>
-            <li><a href="index.php?act=add_lg">Add loại gà</a></li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fab fa-gulp"></i><span class="hide-menu">Loại nước
-              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
-            </span></a>
-          <ul aria-expanded="false" class="collapse">
-            <li><a href="index.php?act=list_nc">List loại nước</a></li>
-            <li><a href="index.php?act=add_nc">Add loại nước</a></li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-wine-glass"></i><span class="hide-menu">Loại mì
-              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
-            </span></a>
-          <ul aria-expanded="false" class="collapse">
-            <li><a href="index.php?act=list_lm">List loại mì</a></li>
-            <li><a href="index.php?act=add_lm">Add loại mì</a></li>
-          </ul>
-        </li>
-        <li>
-          <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-wine-glass"></i><span class="hide-menu">Loại khoai
-              <!-- <span class="badge rounded-pill bg-cyan ms-auto">2</span> -->
-            </span></a>
-          <ul aria-expanded="false" class="collapse">
-            <li><a href="index.php?act=list_lk">List loại khoai</a></li>
-            <li><a href="index.php?act=add_lk">Add loại khoai</a></li>
           </ul>
         </li>
       </ul>

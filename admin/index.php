@@ -10,6 +10,7 @@ include "../model/loaimi.php";
 include "../model/loaikhoai.php";
 include "../model/sanpham.php";
 include "../model/thanhtoan.php";
+include "../model/chitietdonhang.php";
 if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
     include "layout/header.php";
     include "layout/sidebar.php";
@@ -695,6 +696,18 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 <?php
                 break;
 
+                // Chi tiết đơn hàng
+            case "ctdh":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $list_ctdh = load_chitietdonhang($id);
+                    $list_lg = loadAll_loaiga();
+                    $list_nc = loadAll_loainuoc();
+                    $list_mi = loadAll_loaimi();
+                    $list_khoai = loadAll_loaikhoai();
+                }
+                include "donhang/chitietdonhang.php";
+                break;
             default:
                 $list_dm = loadAll_danhmuc();
                 include "home.php";
