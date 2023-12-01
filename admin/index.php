@@ -9,7 +9,7 @@ include "../model/loainuoc.php";
 include "../model/loaimi.php";
 include "../model/loaikhoai.php";
 include "../model/sanpham.php";
-
+include "../model/thanhtoan.php";
 if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
     include "layout/header.php";
     include "layout/sidebar.php";
@@ -661,9 +661,39 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                 <script>
                     window.location.href = 'index.php?act=list_lk';
                 </script>
+            <?php
+                break;
+                // Đơn Hàng
+            case "list_donhang":
+                $list_dh = loadAll_donhang();
+                include "donhang/list_donhang.php";
+                break;
+            case "suadh":
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $donhang_update = loadOne_donhang($id);
+                }
+                include "donhang/update_donhang.php";
+                break;
+            case "update_dh":
+                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+                    $id = $_POST['id'];
+                    $id_user = $_POST['id_user'];
+                    $hoTen = $_POST['hoTen'];
+                    $address = $_POST['address'];
+                    $tel = $_POST['tel'];
+                    $id_pay = $_POST['id_pay'];
+                    $status = $_POST['status'];
+                    update_donhang($id, $id_user, $hoTen, $address, $tel, $id_pay, $status);
+                    $thongbao = "Cập nhật thành công";
+                }
+                $list_dh = loadAll_donhang();
+            ?>
+                <script>
+                    window.location.href = 'index.php?act=list_donhang';
+                </script>
                 <?php
                 break;
-
 
             default:
                 $list_dm = loadAll_danhmuc();
@@ -739,7 +769,6 @@ if (isset($_SESSION['user_login']) && ($_SESSION['user_login'] != "")) {
                             unset($_SESSION['error_cfp']);
                         }
                         insert_taikhoan($user, $pass, $hoten, "", $email, "", "", $id_role);
-                        
                     } else {
                         $mess = "Vui lòng nhập lại đúng mật khẩu";
                         $_SESSION['error_cfp'] = $mess;

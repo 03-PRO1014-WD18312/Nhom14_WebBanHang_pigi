@@ -34,7 +34,7 @@
                         </h2>
                         <p class="product_item-price"><?= $price ?>đ</p>
                         <br />
-                        <div class="product_item-btn" href="index.php?act=chitietsp&id=<?= $id ?>">Đặt hàng</div>
+                        <div class="product_item-btn"><a href="index.php?act=chitietsp&id=<?= $id ?>" style="color:#fff;width: 100%;">Đặt hàng</a></div>
                     </li>
             <?php
                 }

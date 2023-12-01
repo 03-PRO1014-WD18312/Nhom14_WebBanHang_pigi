@@ -10,6 +10,7 @@ include "model/loainuoc.php";
 include "model/loaimi.php";
 include "model/loaikhoai.php";
 include "model/thanhtoan.php";
+include "model/chitietdonhang.php";
 include "view/layout/header.php";
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
@@ -20,85 +21,110 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include "view/thucdon.php";
             break;
         case 'chitietsp':
-            if(isset($_GET['id']) && ($_GET['id'])){
+            if (isset($_GET['id']) && ($_GET['id'])) {
                 $id = $_GET['id'];
                 $sanpham = loadOne_sanpham($id);
-                $list_ga =loadAll_loaiga();
-                $list_mi =loadAll_loaimi();
-                $list_nuoc =loadAll_loainuoc();
-                $list_khoai =loadAll_loaikhoai();
-                if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
-                    
+                $list_ga = loadAll_loaiga();
+                $list_mi = loadAll_loaimi();
+                $list_nuoc = loadAll_loainuoc();
+                $list_khoai = loadAll_loaikhoai();
+                if (
+                    $sanpham['soluong_ga'] == 0 &&
+                    $sanpham['soluong_nuoc'] == 0 &&
+                    $sanpham['soluong_mi'] == 0 &&
+                    $sanpham['soluong_khoai'] == 0
+                ) {
                     if (isset($_SESSION['user']) && ($_SESSION['user'])) {
-                         $id_user = $_POST['id_user'];
-                         $id_pro = $_POST['id'];
-                         $soluong = $_POST['soluong'];
-                         $price = $_POST['price'];
-                    if (isset($_POST['id_ga']) && ($_POST['id_ga'])) {
-                        $id_ga = $_POST['id_ga'];
-                        foreach($list_ga as $loai_ga){
-                           if( $id_ga == $loai_ga['id']){
-                            $price_ga = $loai_ga['price'];
-                           }
-                        }
-                    }else{
-                        $id_ga=0;
-                        $price_ga = 0;
-                    }
-
-                    if (isset($_POST['id_mi']) && ($_POST['id_mi'])) {
-                        $id_mi = $_POST['id_mi'];
-                        foreach($list_mi as $loai_mi){
-                            if( $id_mi == $loai_mi['id']){
-                             $price_mi = $loai_mi['price'];
-                            }
-                         }
-                    }else{
-                        $id_mi=0;
-                        $price_mi = 0;
-                    }
-                    if (isset($_POST['id_nuoc']) && ($_POST['id_nuoc'])) {
-                        $id_nuoc = $_POST['id_nuoc'];
-                        foreach($list_nuoc as $loai_nc){
-                            if( $id_nuoc == $loai_nc['id']){
-                             $price_nuoc = $loai_nc['price'];
-                            }
-                         }
-                    }else{
-                        $id_nuoc=0;
-                        $price_nuoc = 0;
-                    }
-                    if (isset($_POST['id_khoai']) && ($_POST['id_khoai'])) {
-                        $id_khoai = $_POST['id_khoai'];
-                        foreach($list_khoai as $loai_khoai){
-                            if( $id_khoai == $loai_khoai['id']){
-                             $price_khoai = $loai_khoai['price'];
-                            }
-                         }
-                    }else{
-                        $id_khoai=0;
-                        $price_khoai = 0;
-                    }
-                    $last_price = ($price * $soluong) + $price_ga + $price_mi + $price_nuoc + $price_khoai;
-                    insert_giohang($id_user,$id_pro, $id_ga, $id_nuoc, $id_mi,$id_khoai,$soluong,$last_price);
-                    ?>
-                    <script>
-                        window.location = "index.php?act=giohang&id=<?= $_SESSION['user']['id'] ?>"
-                    </script>
-                    <?php
-                    }else{
+                        $id_user = $_SESSION['user']['id'];
+                        $id_pro = $sanpham['id'];
+                        $soluong = 1;
+                        $last_price = $sanpham['price'];
+                        $id_ga = 0;
+                        $id_nuoc = 0;
+                        $id_mi  = 0;
+                        $id_khoai = 0;
+                        insert_giohang($id_user, $id_pro, $id_ga, $id_nuoc, $id_mi, $id_khoai, $soluong, $last_price);
+?>
+                        <script>
+                            window.location = "index.php?act=giohang&id=<?= $_SESSION['user']['id'] ?>"
+                        </script>
+                        <?php
+                    } else {
                         echo "Chua dang nhap";
+                    }
+                } else {
+                    if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
+
+                        if (isset($_SESSION['user']) && ($_SESSION['user'])) {
+                            $id_user = $_POST['id_user'];
+                            $id_pro = $_POST['id'];
+                            $soluong = $_POST['soluong'];
+                            $price = $_POST['price'];
+                            if (isset($_POST['id_ga']) && ($_POST['id_ga'])) {
+                                $id_ga = $_POST['id_ga'];
+                                foreach ($list_ga as $loai_ga) {
+                                    if ($id_ga == $loai_ga['id']) {
+                                        $price_ga = $loai_ga['price'];
+                                    }
+                                }
+                            } else {
+                                $id_ga = 0;
+                                $price_ga = 0;
+                            }
+                            if (isset($_POST['id_mi']) && ($_POST['id_mi'])) {
+                                $id_mi = $_POST['id_mi'];
+                                foreach ($list_mi as $loai_mi) {
+                                    if ($id_mi == $loai_mi['id']) {
+                                        $price_mi = $loai_mi['price'];
+                                    }
+                                }
+                            } else {
+                                $id_mi = 0;
+                                $price_mi = 0;
+                            }
+                            if (isset($_POST['id_nuoc']) && ($_POST['id_nuoc'])) {
+                                $id_nuoc = $_POST['id_nuoc'];
+                                foreach ($list_nuoc as $loai_nc) {
+                                    if ($id_nuoc == $loai_nc['id']) {
+                                        $price_nuoc = $loai_nc['price'];
+                                    }
+                                }
+                            } else {
+                                $id_nuoc = 0;
+                                $price_nuoc = 0;
+                            }
+                            if (isset($_POST['id_khoai']) && ($_POST['id_khoai'])) {
+                                $id_khoai = $_POST['id_khoai'];
+                                foreach ($list_khoai as $loai_khoai) {
+                                    if ($id_khoai == $loai_khoai['id']) {
+                                        $price_khoai = $loai_khoai['price'];
+                                    }
+                                }
+                            } else {
+                                $id_khoai = 0;
+                                $price_khoai = 0;
+                            }
+                            $last_price = ($price * $soluong) + $price_ga + $price_mi + $price_nuoc + $price_khoai;
+                            insert_giohang($id_user, $id_pro, $id_ga, $id_nuoc, $id_mi, $id_khoai, $soluong, $last_price);
+                        ?>
+                            <script>
+                                window.location = "index.php?act=giohang&id=<?= $_SESSION['user']['id'] ?>"
+                            </script>
+            <?php
+                        } else {
+                            echo "Chua dang nhap";
+                        }
                     }
                 }
             }
             include "view/chitietsanpham.php";
             break;
-            
+
         case 'logout':
             if (isset($_SESSION['user'])) {
                 unset($_SESSION['user']);
             }
-?>
+            ?>
             <script>
                 window.location.href = 'index.php';
             </script>
@@ -224,6 +250,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_SESSION['user'])) {
                 extract($_SESSION['user']);
                 $list_giohang = loadAll_giohang_vsID($id);
+                $list_sanpham = loadAll_sanpham();
                 $list_loaiga = loadAll_loaiga();
                 $list_loainc = loadAll_loainuoc();
                 $list_loaimi = loadAll_loaimi();
@@ -250,20 +277,38 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $list_loaikhoai = loadAll_loaikhoai();
                 ?>
                 <script>
-                    document.window.location = "index.php?act=giohang";
+                    window.location = "index.php?act=giohang&id=<?= $id ?>";
                 </script>
 <?php
             }
             break;
         case "thanhtoan":
+            $list_giohang = loadAll_giohang_vsID($id);
+            $list_sanpham = loadAll_sanpham();
+            $sumPrice = 0;
+            foreach ($list_giohang as $giohang) {
+                $sumPrice += $giohang['last_price'];
+            }
             if (isset($_POST['btn_submit']) && ($_POST['btn_submit'])) {
                 $id_user = $_SESSION['user']['id'];
                 $hoTen = $_POST['hoTen'];
-                $tel = $_POST['tel'];   
+                $tel = $_POST['tel'];
                 $address = $_POST['address'];
                 $id_pay = $_POST['id_pay'];
                 $status = 1;
-                insert_thanhtoan($id_user, $hoTen, $tel,  $address, $id_pay, $status);
+                // tạo đơn hàng
+                insert_thanhtoan($id_user, $hoTen, $address, $tel, $id_pay, $status);
+                $donhang = loadNew_donhang($id_user);
+                extract($donhang);
+                $id_donhang = $id;
+
+                foreach ($list_giohang as $giohang) {
+                    extract($giohang);
+                    // tạo chi tiết đơn hàng
+                    insert_chitietdonhang($id_donhang, $id_sanpham, $so_luong, $last_price, $image, $name, $id_ga, $id_nuoc, $id_mi, $id_khoai);
+                }
+                // Xóa sản phẩm ở giỏ hàng
+                delete_giohang_vsId_user($id_user);
             }
             include "view/thanhtoan.php";
             break;

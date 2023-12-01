@@ -12,7 +12,13 @@
                     <li class="box_cart_item">
                         <input type="hidden" name="idUser" value="<?= $id_user ?>">
                         <div class="box_cart_item-box1">
-                            <img src="upload/1_ga_sot_cay_khoai_nc.png" alt="">
+                            <img src="upload/<?php
+                                                foreach ($list_sanpham as $sanpham) {
+                                                    if ($id_sanpham == $sanpham['id']) {
+                                                        echo $sanpham['image'];
+                                                    }
+                                                }
+                                                ?>" alt="">
                             <div class="box_cart_item-content">
                                 <h2 class="box_cart_item-title"><?= $name ?></h2>
                                 <p class="box_cart_item-description">

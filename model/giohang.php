@@ -1,5 +1,6 @@
 <?php
-function insert_giohang($id_user,$id_pro, $id_ga, $id_nuoc, $id_mi,$id_khoai,$soluong,$last_price){
+function insert_giohang($id_user, $id_pro, $id_ga, $id_nuoc, $id_mi, $id_khoai, $soluong, $last_price)
+{
     $sql = "INSERT INTO giohang(id_user, id_sanpham, id_ga, id_nuoc, id_mi, id_khoai, so_luong,last_price) VALUES ('$id_user','$id_pro', '$id_ga', '$id_nuoc', '$id_mi','$id_khoai','$soluong','$last_price')";
     pdo_execute($sql);
 }
@@ -13,5 +14,9 @@ function loadAll_giohang_vsID($id)
 function delete_giohang($id)
 {
     $sql = "DELETE FROM giohang where id='$id'";
+    return pdo_query($sql);
+}
+function delete_giohang_vsId_user($id_user){
+    $sql = "DELETE FROM giohang where id_user='$id_user'";
     return pdo_query($sql);
 }

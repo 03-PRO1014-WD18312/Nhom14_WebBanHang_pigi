@@ -23,6 +23,5 @@ function loadAll_danhmuc()
 function loadOne_danhmuc($id)
 {
     $sql = "SELECT * FROM danhmuc WHERE id='$id'";
-    return pdo_query_one($sql);
-    
+    return pdo_query_one($sql); 
 }

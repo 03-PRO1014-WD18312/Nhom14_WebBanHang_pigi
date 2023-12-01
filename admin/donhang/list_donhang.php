@@ -8,21 +8,22 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 align-self-center">
-                <h4 class="text-themecolor">Thêm sản phẩm</h4>
+                <h4 class="text-themecolor">Danh sách</h4>
             </div>
             <div class="col-md-7 align-self-center text-end">
                 <div class="d-flex justify-content-end align-items-center">
                     <ol class="breadcrumb justify-content-end">
                         <li class="breadcrumb-item">
-                            <a href="javascript:void(0)">Sản phẩm</a>
+                            <a href="javascript:void(0)">Đơn hàng</a>
                         </li>
-                        <li class="breadcrumb-item active">Thêm sản phẩm</li>
+                        <li class="breadcrumb-item active">Danh sách</li>
                     </ol>
-                    <a href="index.php?act=list_sp">
+                    <!-- <a href="index.php?act=add_sp">
                         <button type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white">
-                            <i class="fas fa-clipboard-list"></i> Danh sách
+                            <i class="fa fa-plus-circle"></i> Thêm mới sản phẩm
                         </button>
-                    </a>
+                    </a> -->
+
                 </div>
             </div>
         </div>
@@ -121,129 +122,75 @@
         <!-- End Right sidebar -->
         <!-- ============================================================== -->
         <!-- Star content -->
-        <form action="index.php?act=add_sp" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="mt-4">
-            <div class="form-group">
-                <input type="hidden" name="id" value="<?= $id ?>">
-                <label for="txtTitle " class="form-label" id="lblTitle">Chọn danh mục</label> <br>
-                <select name="id_dm" class="form-control form-select" style="margin-bottom: 10px;">
-                    <?php
-                    foreach ($list_dm as $danhmuc) {
-                        extract($danhmuc);
-                    ?>
-                        <option value="<?= $id ?>">
-                            <?= $name ?>
-                        </option>
-                    <?php
-                    }
-                    ?>
-                </select>
-                <label for="txtTitle " class="form-label" id="lblTitle">Tên sản phẩm</label>
-                <input type="text" class="form-control" required name="name" id="txtTitle" placeholder="Nhập tên sản phẩm" style="margin-bottom: 10px;">
-                <label for="txtTitle " class="form-label" id="lblTitle">Giá sản phẩm</label>
-                <input type="number" class="form-control" required name="price" id="txtTitle" placeholder="Nhập giá sản phẩm" style="margin-bottom: 10px;">
-                <label for="txtImg " class="form-label" id="lblImg">File hình ảnh</label>
-                <input type="file" class="form-control" name="image" id="txtImg" style="margin-bottom: 10px;">
-                <label for="txtTitle " class="form-label" id="lblTitle">Description</label>
-                <input type="text" class="form-control" name="description" id="txtTitle" placeholder="Nhập mô tả sản phẩm" style="margin-bottom: 10px;">
-                <h5 class="card-subtitle" style="margin-top: 1.625rem;margin-bottom: 8px;"> Thuộc tính sản phẩm: </h5>
-                <!-- Gà -->
-                <div class="row">
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Loại sốt gà</label>
-                        <select class="form-control form-select" name="id_ga">
-                            <option value="0">Chọn loại gà</option>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Danh sách đơn hàng</h4>
+                <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Id_user</th>
+                                <th>Họ tên</th>
+                                <th>Địa chỉ</th>
+                                <th>Số điện thoại</th>
+                                <th>Id_pay</th>
+                                <th>Status</th>
+                                <th>Chi tiết đơn hàng</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <?php
-                            foreach ($list_lg as $loaiga) {
-                                extract($loaiga);
+                            if ($list_dh) {
+                                foreach ($list_dh as $donhang) {
+                                    extract($donhang);
+                                    $suadh = "index.php?act=suadh&id=" . $id;
+                                    $ctdh = "index.php?act=ctdh&id=" . $id_user;
                             ?>
-                                <option value="<?= $id ?>"><?= $name ?></option>
+                                    <tr>
+                                        <td><?= $id ?></td>
+                                        <td><?= $id_user ?></td>
+                                        <td><?= $hoTen ?></td>
+                                        <td><?= $address ?></td>
+                                        <td><?= $tel ?></td>
+                                        <td><?= $id_pay ?></td>
+                                        <td><?php
+                                            if ($status == 1) {
+                                            ?>
+                                                <span class="label label-warning">Đã thanh toán</span>
+                                            <?php
+                                            } else if ($status == 2) {
+                                            ?>
+                                                <span class="label label-success">Đang giao</span>
+                                            <?php
+                                            } else if ($status == 3) {
+                                            ?>
+                                                <span class="label label-info">Đã giao hàng</span>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <span class="label label-danger">Đã hủy</span>
+                                            <?php
+                                            }
+                                            ?>
+                                        </td>
+                                        <td><a href="<?php echo $ctdh ?>"><input type="button" class="btn btn-info d-none d-lg-block m-l-15 text-white" value="Xem"></td>
+                                        <td>
+                                            <a href="<?php echo $suadh ?>"><input type="button" class="btn btn-primary text-white" value="Sửa">
+                                            </a>
+                                        </td>
+                                    </tr>
                             <?php
+                                }
                             }
                             ?>
-                        </select>
-                    </div>
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Số lượng gà</label>
-                        <input type="number" class="form-control" name="soluong_ga">
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
-                <!-- Nước -->
-                <div class="row">
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Loại Nước</label>
-                        <select class="form-control form-select" name="id_nuoc">
-                            <option value="0">Chọn loại nước</option>
-                            <?php
-                            foreach ($list_nc as $loainuoc) {
-                                extract($loainuoc);
-                            ?>
-                                <option value="<?= $id ?>"><?= $name ?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Số lượng nước</label>
-                        <input type="number" class="form-control" name="soluong_nuoc">
-                    </div>
-                </div>
-                <!-- Mì -->
-                <div class="row">
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Loại Mì</label>
-                        <select class="form-control form-select" name="id_mi">
-                            <option value="0">Chọn loại Mì</option>
-                            <?php
-                            foreach ($list_mi as $loaimi) {
-                                extract($loaimi);
-                            ?>
-                                <option value="<?= $id ?>"><?= $name ?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Số lượng mì</label>
-                        <input type="number" class="form-control" name="soluong_mi">
-                    </div>
-                </div>
-                <!-- Khoai -->
-                <div class="row">
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Loại Khoai</label>
-                        <select class="form-control form-select" name="id_khoai">
-                            <option value="0">Chọn loại khoai</option>
-                            <?php
-                            foreach ($list_khoai as $loaikhoai) {
-                                extract($loaikhoai);
-                            ?>
-                                <option value="<?= $id ?>"><?= $name ?></option>
-                            <?php
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <!--/span-->
-                    <div class="col-md-6">
-                        <label class="form-label">Số lượng khoai</label>
-                        <input type="number" class="form-control" name="soluong_khoai">
-                    </div>
-                </div>
-
             </div>
-            <input type="submit" name="btn_submit" class="btn btn-info  text-white" value="Lưu">
-            <input type="reset" class="btn btn-primary text-white" value="Reset">
-            <a href="index.php?act=list_dm"><button type="button" class="btn waves-effect waves-light btn-danger">Hủy</button></a>
-        </form>
+        </div>
         <!-- End content -->
     </div>
     <!-- ============================================================== -->
